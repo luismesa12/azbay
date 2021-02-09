@@ -4,7 +4,7 @@ const ItemCard = ({ product }) => {
             <div className="card-body">
                 <img src={product.pictureUrl} />
                 <h4 className="card-title">{product.title}</h4>
-                <h5>${product.price}</h5>
+                <h5>{(product.price)?`$${product.price}`:""}</h5>
             </div>
         </div>
     );
