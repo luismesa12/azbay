@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemCard from "../ItemListContainer/ItemList/Item/ItemCard";
 import Products from "../Products";
 import Spinner from "./Spinner";
 
 const ItemDetailContainer = () => {
+
+    const {id} = useParams();
     const [itemDetail, setItemDetail] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         const getItems = new Promise((resolve) => {
-            setTimeout(() => resolve(Products[0]), 2000)
+            setTimeout(() => resolve(Products.find(i=>i.id.toString()===id)), 1500)
         });
 
         getItems.then((res) => {
@@ -16,7 +19,7 @@ const ItemDetailContainer = () => {
             setLoading(false);
         });
 
-    }, []);
+    }, [id]);
 
     return (
         <>

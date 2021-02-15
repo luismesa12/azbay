@@ -7,7 +7,7 @@ const ItemList = () => {
 
     useEffect(() => {
         const productPromise = new Promise((resolve) => {
-            setTimeout(() => resolve(Products), 3000)
+            setTimeout(() => resolve(Products), 1500)
         });
 
         productPromise.then((res) => {

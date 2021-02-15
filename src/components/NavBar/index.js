@@ -13,17 +13,18 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="nav navbar-nav ml-auto text-center">
-                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
-                            href="#">Inicio</a>
+                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
+                            <NavLink to='/' className="nav-link">Inicio</NavLink>
                         </li>
-                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
-                            href="#">Productos</a></li>
+                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
+                        <NavLink to='/items' className="nav-link">Productos</NavLink>
+                        </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link" 
                         href="#">Mi Cuenta</a></li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
                             href="#">Carrito</a></li><CartWidget/>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
-                            href="#contacto">Contacto</a></li>
+                            href="#">Contacto</a></li>
                     </ul>
                 </div>
             </nav>

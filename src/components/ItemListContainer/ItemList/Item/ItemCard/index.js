@@ -1,3 +1,5 @@
+import ItemCount from "../../../ItemCount"
+
 const ItemCard = ({ product }) => {
     return (
         <div className="card">
