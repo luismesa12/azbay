@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget';
 
 
@@ -6,8 +7,7 @@ function NavBar() {
     return (
         <>
             <nav id="menu" className="nav navbar navbar-expand-lg navbar-dark bg-dark">
-
-                <a className="navbar-brand mb-0 h1" href="#">AZbay</a>
+                <NavLink to='/' className="navbar-brand mb-0 h1">AZbay</NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <span className="navbar-toggler-icon"></span>
                 </button>
