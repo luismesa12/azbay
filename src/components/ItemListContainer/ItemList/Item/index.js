@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 
 const Item = ({ productsState }) => {

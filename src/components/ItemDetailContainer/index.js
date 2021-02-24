@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemCount from "../ItemListContainer/ItemCount";
 import ItemCard from "../ItemListContainer/ItemList/Item/ItemCard";
 import Products from "../Products";
 import Spinner from "./Spinner";
