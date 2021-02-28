@@ -17,12 +17,13 @@ function NavBar() {
                             <NavLink to='/' className="nav-link">Inicio</NavLink>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
-                        <NavLink to='/items' className="nav-link">Productos</NavLink>
+                            <NavLink to='/items' className="nav-link">Productos</NavLink>
                         </li>
-                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link" 
-                        href="#">Mi Cuenta</a></li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
-                            href="#">Carrito</a></li><CartWidget/>
+                            href="#">Mi Cuenta</a></li>
+                        <NavLink to='/carrito'>
+                            <CartWidget />
+                        </NavLink>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
                             href="#">Contacto</a></li>
                     </ul>

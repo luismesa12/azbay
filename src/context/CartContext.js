@@ -24,9 +24,11 @@ export const CartProvider = ({ children }) => {
             setCart([item])
         }
     };
-    function removeFromCart(itemId) {
-        cart.splice(itemId,1);
-        setCart(cart);
+    function removeFromCart(item) {
+        console.log("se eliminó", item.title);
+        let tempCart = [...cart]
+        tempCart.splice(indexInCart(item),1);
+        setCart(tempCart);
     };
     function clearCart() {
         setCart([]);
@@ -35,7 +37,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     )
