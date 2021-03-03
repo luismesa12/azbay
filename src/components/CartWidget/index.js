@@ -13,7 +13,7 @@ const CartWidget = () => {
     return (
         <>
             <img src="../../img/carrito-de-compras.svg" width="40" alt="carrito" />
-            <span class="badge badge-light">{accum || null}</span>
+            <span className="badge badge-light">{accum || null}</span>
         </>
     )
 }
