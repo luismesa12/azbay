@@ -9,7 +9,10 @@ const ItemList = () => {
     useEffect(() => {
         const itemCollection = db.collection('Products');
         itemCollection.get().then((value) => {
-            let aux = value.docs.map(element => element.data())
+            let aux = value.docs.map(element => {
+                const auxE = element; 
+                return {id: auxE.id, ...auxE.data()}
+            })
             console.log(aux)
             setProductsState(aux)
         });
