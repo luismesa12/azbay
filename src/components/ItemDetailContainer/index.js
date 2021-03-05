@@ -11,13 +11,13 @@ const ItemDetailContainer = () => {
     const [itemDetail, setItemDetail] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        
-        console.log('ItemDetailContainer', products)
-        const getItems = products.find(i => i.id === id)
-        setItemDetail(getItems);
-        setLoading(false);
-
-    }, [id]);
+        if (products.length>0) {
+            console.log('ItemDetailContainer', products)
+            const getItems = products.find(i => i.id === id)
+            setItemDetail(getItems);
+            setLoading(false);
+        }
+    }, [products]);
 
     return (
         <>
