@@ -3,7 +3,6 @@ import Item from "./Item";
 
 const ItemList = () => {
     const {products} =useProductContext();
-    console.log('list',products);
     const productsState = products;
 
     return (

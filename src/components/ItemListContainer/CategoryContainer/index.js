@@ -6,18 +6,14 @@ import Item from "../ItemList/Item";
 const CategoryContainer = () => {
     const [productsFiltered, setProductsFiltered] = useState([])
     const { products } = useProductContext();
-    console.log('catgorycontainer', products);
     let categoryAAA = [];
     let categoryBBB = [];
     let categoryCCC = [];
     useEffect(() => {
         if (products.length > 0) {
-            categoryAAA = products.filter(i => i.price == 100);
-            categoryBBB = products.filter(i => i.price == 200);
-            categoryCCC = products.filter(i => i.price == 300);
-            console.log('cateAAA:', categoryAAA);
-            console.log('catebbb:', categoryBBB);
-            console.log('cateccc:', categoryCCC);
+            categoryAAA = products.filter(i => i.category === 'AAA');
+            categoryBBB = products.filter(i => i.category === 'BBB');
+            categoryCCC = products.filter(i => i.category === 'CCC');
         }
     }, [products, productsFiltered]);
     const cAAA = () => setProductsFiltered(categoryAAA);

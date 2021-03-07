@@ -12,7 +12,6 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         if (products.length>0) {
-            console.log('ItemDetailContainer', products)
             const getItems = products.find(i => i.id === id)
             setItemDetail(getItems);
             setLoading(false);

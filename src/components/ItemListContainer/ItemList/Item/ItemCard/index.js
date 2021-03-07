@@ -15,7 +15,6 @@ const ItemCard = ({ product }) => {
         addToCart({ ...product, quantity: count });
     };
     // console.log(q);
-    console.log(cart);
 
     return (
         <div className="card">

@@ -16,7 +16,6 @@ export const ProductProvider = ({ children }) => {
                 const auxE = element; 
                 return {id: auxE.id, ...auxE.data()}
             })
-            console.log('aux', aux)
             setProducts(aux)
         });
     }, []);

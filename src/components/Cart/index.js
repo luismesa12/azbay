@@ -25,6 +25,7 @@ const Cart = () => {
                                     <h3>
                                         Total a pagar: ${accum}
                                     </h3>
+                                    <Link to='/orders'><button>Finalizar Compra</button></Link>
                                 </div>
                             </div>
                         </div>

@@ -25,7 +25,6 @@ export const CartProvider = ({ children }) => {
         }
     };
     function removeFromCart(item) {
-        console.log("se eliminó", item.title);
         let tempCart = [...cart]
         tempCart.splice(indexInCart(item),1);
         setCart(tempCart);

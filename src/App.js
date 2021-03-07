@@ -8,6 +8,7 @@ import ItemList from './components/ItemListContainer/ItemList';
 import Cart from './components/Cart';
 import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
+import Orders from './components/Cart/Orders';
 
 
 
@@ -34,6 +35,9 @@ function App() {
               </Route>
               <Route exact path='/carrito'>
                 <Cart />
+              </Route>
+              <Route exact path='/orders'>
+                <Orders/>
               </Route>
             </Switch>
           </BrowserRouter>
