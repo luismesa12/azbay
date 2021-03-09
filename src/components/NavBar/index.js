@@ -8,6 +8,9 @@ function NavBar() {
         <>
             <nav id="menu" className="nav navbar navbar-expand-lg navbar-dark bg-dark">
                 <NavLink to='/' className="navbar-brand mb-0 h1">AZbay</NavLink>
+                <NavLink to='/carrito' data-toggle="collapse" data-target="#navbarNav">
+                            <CartWidget />
+                </NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,9 +24,7 @@ function NavBar() {
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
                             href="#">Mi Cuenta</a></li>
-                        <NavLink to='/carrito'>
-                            <CartWidget />
-                        </NavLink>
+                        
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
                             href="#">Contacto</a></li>
                     </ul>
