@@ -1,32 +1,18 @@
 import React, { useState } from "react";
+import Counter from "./Counter";
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
+    
     const [count, setCount] = useState(initial)
-
-    const decCount = () => {
-        if (count > 0) {
-            setCount(count - 1)
-        }
-    };
-    const incCount = () => {
-        if (count < stock) {
-            setCount(count + 1)
-        }
-    };
+    
     const handlerOnAdd= ()=>{
         onAdd(count);
     }
     return (
         <>
-            <button onClick={decCount}>-</button>
-            <span>{count}</span>
-            <button onClick={incCount}>+</button>
-            <br />
+            <Counter count={count} max={stock} setCount={setCount}/>
             <button onClick={handlerOnAdd}>Agregar</button>
-            {/* const onAdd = ()=>{
-        alert(`Se agregaron ${count} Items`)    
-    } */}
         </>
     )
 }
