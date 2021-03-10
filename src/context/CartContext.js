@@ -24,9 +24,14 @@ export const CartProvider = ({ children }) => {
             setCart([item])
         }
     };
+    function editQuantityCart(item, newQuantity) {
+        let tempCart = [...cart]
+        tempCart[indexInCart(item)].quantity = newQuantity;
+        setCart(tempCart)
+    };
     function removeFromCart(item) {
         let tempCart = [...cart]
-        tempCart.splice(indexInCart(item),1);
+        tempCart.splice(indexInCart(item), 1);
         setCart(tempCart);
     };
     function clearCart() {
@@ -36,7 +41,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, clearCart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, clearCart, addToCart, removeFromCart, editQuantityCart}}>
             {children}
         </CartContext.Provider>
     )
