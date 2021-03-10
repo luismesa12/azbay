@@ -1,19 +1,26 @@
 import { useCartContext } from "../../../context/CartContext";
 import firebase from 'firebase/app';
 import db from "../../../firebase";
+import { useState } from "react";
+import AlertOrder from "./AlertOrder";
 
 
 
 const Orders = () => {
-    const { cart } = useCartContext();
+    const { cart, clearCart } = useCartContext();
+    const [currentOrder, setCurrentOrder] = useState({});
+    const [orderOk, setOrderOk] = useState(false);
+    const [orderError, setOrderError] = useState(false);
+
     const tempCart = [...cart];
-    const accum = tempCart.reduce(totalQ, 0)
+    const accum = tempCart.reduce(totalQ, 0);
 
     function totalQ(acc, i) {
         return acc += i.price * i.quantity
     };
     /* */
-    async function createOrder() {
+    async function createOrder(e) {
+        e.preventDefault();
         const buyer = {
             name: document.getElementById("fname").value,
             lastName: document.getElementById("sname").value,
@@ -32,10 +39,15 @@ const Orders = () => {
         try {
             await orders.add(newOrder).then(id => {
                 console.log('Order created with id: ', id.id);
+                setCurrentOrder({ id: id.id, ...newOrder });
+                clearCart();
+                e.target.reset();
+                setOrderOk(true)
             });
         }
         catch (err) {
             console.error(err);
+            setOrderError(true)
         }
     }
     /*  */
@@ -54,7 +66,7 @@ const Orders = () => {
                                 <h3>
                                     Total a pagar: ${accum}
                                 </h3>
-                                <div>
+                                <form onSubmit={createOrder}>
                                     <h6>Ingrese Sus Datos:</h6>
                                     <div>
                                         <input id='fname' placeholder='Nombre'></input>
@@ -68,13 +80,16 @@ const Orders = () => {
                                     <div>
                                         <input id='email' placeholder='Email'></input>
                                     </div>
-                                </div>
-                                <button onClick={createOrder}>Finalizar Orden</button>
+                                    <button type="submit">Finalizar Orden</button>
+                                </form>
                             </div>
                         </div>
+                        <AlertOrder currentOrder={currentOrder} orderOk={orderOk} orderError={orderError}/>
                     </div>
+
                 </>
             }
+
         </>
     )
 }
