@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../../../../context/CartContext";
+import FavoriteBtn from "../../../../FavoriteBtn";
 import ItemCount from "../../../ItemCount"
 import ItemCardAdd from "./ItemCardAdd";
 
@@ -21,6 +22,7 @@ const ItemCard = ({ product, WithCounter=false }) => {
                     <h4 className="card-title">{product.title}</h4>
                     <h5>{(product.price) ? `$${product.price}` : ""}</h5>
                 </Link>
+                <FavoriteBtn item={product}/>
                 {
                     goToCart ? 
                     <Link to='/carrito'><button>Ir al Carrito</button></Link>

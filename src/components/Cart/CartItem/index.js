@@ -17,12 +17,10 @@ const CartItem = ({ item }) => {
                         <img src={item.pictureUrl} className='col-1' />
                         <h2 className='my-auto col'>{item.title}</h2>
                         <h5 className='my-auto col'>Precio: ${item.price}</h5>
-                        <h5 className='my-auto col'>Cantidad: <span><Counter count={count} max={12} setCount={setCount}/></span></h5>
-                        
+                        <h5 className='my-auto col'>Cantidad: <span><Counter count={count} max={12} setCount={setCount}/></span></h5> 
                         <h5 className='my-auto col'>Total: ${item.price * item.quantity}</h5>
                         <button className='my-auto col-1' onClick={() => removeFromCart(item)}>x</button>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -9,38 +9,41 @@ import Cart from './components/Cart';
 import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
 import Orders from './components/Cart/Orders';
+import { FavoriteProvider } from './context/FavoriteContext';
+import FavoriteList from './components/FavoriteList';
 
 
 
 function App() {
   return (
     <>
-
-      {/* <NavBar/>
-      <ItemDetailContainer/>
-      <ItemListContainer greeting={`Hi! I'm a greeting`}/> */}
       <ProductProvider>
         <CartProvider>
-          <BrowserRouter>
-            <NavBar />
-            <Switch>
-              <Route exact path='/'>
-                <ItemListContainer greeting={`Hi! I'm a greeting`} />
-              </Route>
-              <Route exact path='/items'>
-                <ItemList />
-              </Route>
-              <Route exact path='/item/:id'>
-                <ItemDetailContainer />
-              </Route>
-              <Route exact path='/carrito'>
-                <Cart />
-              </Route>
-              <Route exact path='/orders'>
-                <Orders/>
-              </Route>
-            </Switch>
-          </BrowserRouter>
+          <FavoriteProvider>
+            <BrowserRouter>
+              <NavBar />
+              <Switch>
+                <Route exact path='/'>
+                  <ItemListContainer greeting={`Hi! I'm a greeting`} />
+                </Route>
+                <Route exact path='/items'>
+                  <ItemList />
+                </Route>
+                <Route exact path='/item/:id'>
+                  <ItemDetailContainer />
+                </Route>
+                <Route exact path='/carrito'>
+                  <Cart />
+                </Route>
+                <Route exact path='/orders'>
+                  <Orders/>
+                </Route>
+                <Route exact path='/myFavorites'>
+                  <FavoriteList/>
+                </Route>
+              </Switch>
+            </BrowserRouter>
+          </FavoriteProvider>
         </CartProvider>
       </ProductProvider>
     </>
