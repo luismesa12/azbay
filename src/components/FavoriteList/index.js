@@ -5,7 +5,6 @@ import FavoriteItem from './FavoriteItem';
 const FavoriteList = () => {
     const{removeFromFavorites, favorites}=useFavoriteContext();
 
-    console.log('FavoriteList', favorites);
     return (
         <div>
             <h1>FavoriteList /myFavorites</h1>

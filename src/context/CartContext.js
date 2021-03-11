@@ -12,6 +12,9 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
     function addToCart(item) {
+        if (!item.quantity) {
+            item.quantity=1
+        };
         if (cart.length !== 0) {
             if (indexInCart(item) >= 0) {
                 let tempCart = [...cart]
