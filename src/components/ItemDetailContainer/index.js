@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
     return (
         <>
             <h1>ItemDetailContainer</h1>
-            {loading ? <Spinner /> : <><ItemCard product={itemDetail} /></>}
+            {loading ? <Spinner /> : <><ItemCard product={itemDetail} WithCounter={true}/></>}
         </>);
 };
 export default ItemDetailContainer;

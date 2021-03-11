@@ -2,19 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../../../../context/CartContext";
 import ItemCount from "../../../ItemCount"
+import ItemCardAdd from "./ItemCardAdd";
 
 
-const ItemCard = ({ product }) => {
+const ItemCard = ({ product, WithCounter=false }) => {
     const [goToCart, setGoToCart] = useState(false);
-    // const [q, setQ] = useState({});
-    const { cart, addToCart } = useCartContext();
+    const { addToCart } = useCartContext();
     const onAdd = (count) => {
-        // setQ({ quantity: count, item: product });
         setGoToCart(true);
-        // console.log(count);
         addToCart({ ...product, quantity: count });
     };
-    // console.log(q);
 
     return (
         <div className="card">
@@ -24,7 +21,14 @@ const ItemCard = ({ product }) => {
                     <h4 className="card-title">{product.title}</h4>
                     <h5>{(product.price) ? `$${product.price}` : ""}</h5>
                 </Link>
-                {goToCart ? <Link to='/carrito'><button>Ir al Carrito</button></Link> : <ItemCount stock={5} initial={1} onAdd={onAdd}></ItemCount>}
+                {
+                    goToCart ? 
+                    <Link to='/carrito'><button>Ir al Carrito</button></Link>
+                    :WithCounter?
+                        <ItemCount stock={12} initial={1} onAdd={onAdd}></ItemCount>
+                        :<ItemCardAdd onAdd={onAdd}/>
+                }
+                
             </div>
         </div>
     );
