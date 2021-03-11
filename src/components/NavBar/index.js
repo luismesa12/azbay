@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget';
+import FavoriteWidget from '../FavoriteWidget';
 
 
 function NavBar() {
@@ -7,8 +8,11 @@ function NavBar() {
         <>
             <nav id="menu" className="nav navbar navbar-expand-lg navbar-dark bg-dark">
                 <NavLink to='/' className="navbar-brand mb-0 h1">AZbay</NavLink>
+                <NavLink to='/myFavorites'>
+                <FavoriteWidget />
+                </NavLink>
                 <NavLink to='/carrito' data-toggle="collapse" data-target="#navbarNav">
-                            <CartWidget />
+                    <CartWidget />
                 </NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <span className="navbar-toggler-icon"></span>
@@ -23,7 +27,7 @@ function NavBar() {
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
                             href="#">Mi Cuenta</a></li>
-                        
+
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
                             href="#">Contacto</a></li>
                     </ul>
