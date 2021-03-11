@@ -7,7 +7,9 @@ export const useCartContext = () => useContext(CartContext);
 
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    const lsCart = JSON.parse(localStorage.getItem("cart")) || [];  
+    const [cart, setCart] = useState(lsCart);
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     function addToCart(item) {
         if (cart.length !== 0) {
