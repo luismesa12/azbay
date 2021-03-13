@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchContext } from "../../../context/SearchContext";
 import Item from "../ItemList/Item";
 import Spinner from "../../ItemDetailContainer/Spinner"
+import SortPrice from "../../SortPrice";
 
 const CategoryContainer = () => {
     const {searchValue, productsFound} = useSearchContext();
@@ -27,7 +28,10 @@ const CategoryContainer = () => {
             <button onClick={cAll}>Todos</button>
             <button onClick={cAAA}>AAA</button>
             <button onClick={cBBB}>BBB</button>
-            <button onClick={cCCC}>CCC</button>               
+            <button onClick={cCCC}>CCC</button>
+            <div>
+                Ordenar: <SortPrice products={productsFiltered} sortProducts={(e)=>{setProductsFiltered(e)}}/>
+            </div>               
             {
                 productsFiltered.length?
                     <div className='card-columns'><Item productsState={productsFiltered}/></div>
