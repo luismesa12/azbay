@@ -18,37 +18,37 @@ import { SearchProvider } from './context/SearchContext';
 function App() {
   return (
     <>
-      <SearchProvider>
-          <ProductProvider>
-            <CartProvider>
-              <FavoriteProvider>
-                <BrowserRouter>
-                  <NavBar />
-                  <Switch>
-                    <Route exact path='/'>
-                      <ItemListContainer greeting={`Hi! I'm a greeting`} />
-                    </Route>
-                    <Route exact path='/items'>
-                      <ItemList />
-                    </Route>
-                    <Route exact path='/item/:id'>
-                      <ItemDetailContainer />
-                    </Route>
-                    <Route exact path='/carrito'>
-                      <Cart />
-                    </Route>
-                    <Route exact path='/orders'>
-                      <Orders/>
-                    </Route>
-                    <Route exact path='/myFavorites'>
-                      <FavoriteList/>
-                    </Route>
-                  </Switch>
-                </BrowserRouter>
-              </FavoriteProvider>
-            </CartProvider>
-          </ProductProvider>
-      </SearchProvider>
+      <ProductProvider>
+        <SearchProvider>
+          <CartProvider>
+            <FavoriteProvider>
+              <BrowserRouter>
+                <NavBar />
+                <Switch>
+                  <Route exact path='/'>
+                    <ItemListContainer greeting={`Hi! I'm a greeting`} />
+                  </Route>
+                  <Route exact path='/items'>
+                    <ItemList />
+                  </Route>
+                  <Route exact path='/item/:id'>
+                    <ItemDetailContainer />
+                  </Route>
+                  <Route exact path='/carrito'>
+                    <Cart />
+                  </Route>
+                  <Route exact path='/orders'>
+                    <Orders />
+                  </Route>
+                  <Route exact path='/myFavorites'>
+                    <FavoriteList />
+                  </Route>
+                </Switch>
+              </BrowserRouter>
+            </FavoriteProvider>
+          </CartProvider>
+        </SearchProvider>
+      </ProductProvider>
     </>
   );
 }
