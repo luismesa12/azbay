@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget';
 import FavoriteWidget from '../FavoriteWidget';
+import SearchBar from '../SearchBar';
 
 
 function NavBar() {
@@ -19,6 +20,9 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="nav navbar-nav ml-auto text-center">
+                        <li className="nav-item">
+                            <SearchBar/>
+                        </li>
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
                             <NavLink to='/' className="nav-link">Inicio</NavLink>
                         </li>

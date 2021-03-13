@@ -28,8 +28,8 @@ const CategoryContainer = () => {
             <button onClick={cCCC}>CCC</button>
             <div className='card-columns'>
             {productsFiltered.length?
-            <Item productsState={productsFiltered} />
-            :<Item productsState={products} />}
+                <Item productsState={productsFiltered} />
+                :<Item productsState={products} />}
             </div>
         </>
     )
