@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useProductContext } from "../../../context/ProductContext";
+import { useSearchContext } from "../../../context/SearchContext";
 import Item from "../ItemList/Item";
 
 
 const CategoryContainer = () => {
+    const {searchValue, setSearchValue} = useSearchContext();
+    console.log(searchValue);
     const [productsFiltered, setProductsFiltered] = useState([])
     const { products } = useProductContext();
     let categoryAAA = [];

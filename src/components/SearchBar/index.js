@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
 import { withRouter } from 'react-router';
+import { useSearchContext } from '../../context/SearchContext';
 
 
 const SearchBar = ({ history }) => {
-    const [searchValue, setSearchValue] = useState("")
-
-    const funPrueba = (e) => {
+    const {searchValue, setSearchValue} = useSearchContext();
+    const goHome = (e) => {
         e.preventDefault();
-        console.log('searchValue:', searchValue);
         history.push('/')
-    }
+    };
 
     return (
         <>
-            <form onSubmit={funPrueba}>
+            <form onSubmit={goHome}>
                 <input id="searchInput" type="search" onChange={(e) => { setSearchValue(e.target.value) }} />
                 <button  type="submit">search</button>
             </form>

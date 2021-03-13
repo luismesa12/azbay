@@ -11,41 +11,44 @@ import { ProductProvider } from './context/ProductContext';
 import Orders from './components/Cart/Orders';
 import { FavoriteProvider } from './context/FavoriteContext';
 import FavoriteList from './components/FavoriteList';
+import { SearchProvider } from './context/SearchContext';
 
 
 
 function App() {
   return (
     <>
-      <ProductProvider>
-        <CartProvider>
-          <FavoriteProvider>
-            <BrowserRouter>
-              <NavBar />
-              <Switch>
-                <Route exact path='/'>
-                  <ItemListContainer greeting={`Hi! I'm a greeting`} />
-                </Route>
-                <Route exact path='/items'>
-                  <ItemList />
-                </Route>
-                <Route exact path='/item/:id'>
-                  <ItemDetailContainer />
-                </Route>
-                <Route exact path='/carrito'>
-                  <Cart />
-                </Route>
-                <Route exact path='/orders'>
-                  <Orders/>
-                </Route>
-                <Route exact path='/myFavorites'>
-                  <FavoriteList/>
-                </Route>
-              </Switch>
-            </BrowserRouter>
-          </FavoriteProvider>
-        </CartProvider>
-      </ProductProvider>
+      <SearchProvider>
+          <ProductProvider>
+            <CartProvider>
+              <FavoriteProvider>
+                <BrowserRouter>
+                  <NavBar />
+                  <Switch>
+                    <Route exact path='/'>
+                      <ItemListContainer greeting={`Hi! I'm a greeting`} />
+                    </Route>
+                    <Route exact path='/items'>
+                      <ItemList />
+                    </Route>
+                    <Route exact path='/item/:id'>
+                      <ItemDetailContainer />
+                    </Route>
+                    <Route exact path='/carrito'>
+                      <Cart />
+                    </Route>
+                    <Route exact path='/orders'>
+                      <Orders/>
+                    </Route>
+                    <Route exact path='/myFavorites'>
+                      <FavoriteList/>
+                    </Route>
+                  </Switch>
+                </BrowserRouter>
+              </FavoriteProvider>
+            </CartProvider>
+          </ProductProvider>
+      </SearchProvider>
     </>
   );
 }
