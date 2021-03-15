@@ -1,31 +1,41 @@
 import { useState } from "react";
 import FormPriceRange from "./FormPriceRange";
 
-const PriceRange = ({products, setProducts, productsDefault, NotFound}) => {
+const PriceRange = ({filterProducts, setFilter}) => {
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(0);
 
+
     const filterRange =(e)=>{
-        e.preventDefault()
-        const tempProducts = products.filter((i)=>{
-            return i.price >= min && i.price <= max
-        });
-        NotFound(true)
-        setProducts(tempProducts);
-        e.target.reset();
+        e.preventDefault();
+        const aux = JSON.parse(JSON.stringify(filterProducts));
+        aux.map(e=>{
+            e.filterPriceRange=true
+            if (e.price < min || e.price > max) {
+                e.filterPriceRange=false
+            }
+        })
+        setFilter(aux)
+        // e.target.reset();
     };
     const getMin=(value)=>{
-        setProducts(productsDefault);
         setMin(value);
     };
     const getMax=(value)=>{
-        setProducts(productsDefault);
         setMax(value);
     };
-
+    const reset=(e)=>{
+        e.current.reset()
+        const aux = JSON.parse(JSON.stringify(filterProducts));
+        aux.map(e=>{
+            return e.filterPriceRange=true
+        })
+        setFilter(aux)
+    };
+    
     return (
         <>
-            <FormPriceRange getMin={getMin} getMax={getMax} filterRange={filterRange}/>
+            <FormPriceRange getMin={getMin} getMax={getMax} filterRange={filterRange} reset={reset}/>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import CategoryContainer from "./CategoryContainer";
+import FilterContainer from "./FilterContainer";
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -8,8 +8,8 @@ const ItemListContainer = ({ greeting }) => {
         <>
             <h2 className="text-center text-info">{greeting}</h2>
     
-            <h2>Categorias</h2>
-            <CategoryContainer/>
+            <h1>ItemListContainer</h1>
+            <FilterContainer/>
         </>
     )
 }
