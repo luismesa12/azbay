@@ -37,6 +37,9 @@ const FilterContainer = () => {
                 <div className="col">
                     <PriceRange {...{ filterProducts, setFilter}}/>
                 </div>
+                <div className="col">
+                   <SortPrice {...{ filterProducts, setFilter}}/>
+                </div>
             </div>
             
             <div className='card-columns'><Item productsState={productsFiltered} /></div>

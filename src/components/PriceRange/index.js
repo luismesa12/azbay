@@ -16,7 +16,6 @@ const PriceRange = ({filterProducts, setFilter}) => {
             }
         })
         setFilter(aux)
-        // e.target.reset();
     };
     const getMin=(value)=>{
         setMin(value);
