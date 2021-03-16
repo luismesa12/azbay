@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemCard from "../ItemListContainer/ItemGallery/ItemCard";
 import Spinner from "../Spinner";
 import { useProductContext } from "../../context/ProductContext";
+import DetailCard from "./DetailCard";
 
 
 const ItemDetailContainer = () => {
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
     return (
         <>
             <h1>ItemDetailContainer</h1>
-            {loading ? <Spinner /> : <><ItemCard product={itemDetail} WithCounter={true}/></>}
+            {loading ? <Spinner /> : <><DetailCard product={itemDetail}/></>}
         </>);
 };
 export default ItemDetailContainer;
