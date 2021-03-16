@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import { useSearchContext } from "../../../context/SearchContext"
+import { useSearchContext } from "../../../../../context/SearchContext"
 
 const FormPriceRange = ({getMin, getMax, filterRange, reset}) => {
     const { searchValue } = useSearchContext();

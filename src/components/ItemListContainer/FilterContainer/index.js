@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useSearchContext } from "../../../context/SearchContext";
 import Item from "../Item";
 import Spinner from "../../Spinner"
-import SortPrice from "../../SortPrice";
-import PriceRange from "../../PriceRange";
-import Categories from "../../Categories";
+import SortPrice from "./SortPrice";
+import PriceRange from "./PriceRange";
+import Categories from "./Categories";
 
 const FilterContainer = () => {
     const { searchValue, productsFound } = useSearchContext();
