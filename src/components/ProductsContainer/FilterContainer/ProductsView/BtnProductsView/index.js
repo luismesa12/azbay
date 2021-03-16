@@ -1,9 +1,9 @@
-const BtnProductsView = () => {
+const BtnProductsView = ({viewList, viewGallery}) => {
     return (
         <div>
             <span>Ver: </span>
-            <button>lista</button>
-            <button>Cuadros</button>
+            <button onClick={viewList}>lista</button>
+            <button onClick={viewGallery}>Cuadros</button>
         </div>
     )
 }

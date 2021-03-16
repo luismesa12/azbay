@@ -1,9 +1,7 @@
-import { useProductContext } from "../../../context/ProductContext";
 import ItemListCard from "./ItemListCard";
 
-const ItemList = () => {
-    const {products} =useProductContext();
-    const productsState = products;
+const ItemList = ({ productsState }) => {
+
 
     return (
         <>
