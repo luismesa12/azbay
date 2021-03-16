@@ -1,7 +1,12 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
+import { useSearchContext } from "../../../context/SearchContext"
 
 const FormPriceRange = ({getMin, getMax, filterRange, reset}) => {
+    const { searchValue } = useSearchContext();
     const formRef = useRef()
+    useEffect(() => {
+        formRef.current.reset()
+    }, [searchValue])
     return (
         <div>
             <span>Rango de Precio: </span>

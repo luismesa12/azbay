@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchContext } from "../../../context/SearchContext";
 import Item from "../ItemList/Item";
-import Spinner from "../../ItemDetailContainer/Spinner"
+import Spinner from "../../Spinner"
 import SortPrice from "../../SortPrice";
 import PriceRange from "../../PriceRange";
 import Categories from "../../Categories";
@@ -26,8 +26,6 @@ const FilterContainer = () => {
         return e.filterCategory === true && e.filterPriceRange===true
     })
 
-    console.log('p',productsFiltered);
-
     return (
         <>  
             <div className="row">
@@ -43,18 +41,7 @@ const FilterContainer = () => {
             </div>
             
             <div className='card-columns'><Item productsState={productsFiltered} /></div>
-            {/* <h2>FilterContainer</h2>
-            <div className="row">
-            <div className="col">
-                <Categories {...{ filterProducts, setFilter, setWasNotFound }} />
-            </div>
-            <div className="col">
-                <PriceRange {...{ filterProducts, setFilter, setWasNotFound }}/>
-            </div>
-            </div>
-            {
-                <div className='card-columns'><Item productsState={filterProducts[0]} /></div>
-            } */}
+
         </>
     )
 }
