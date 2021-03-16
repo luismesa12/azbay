@@ -12,15 +12,19 @@ const FilterContainer = () => {
     const { searchValue, productsFound } = useSearchContext();
     const [filterProducts, setFilterProducts] = useState([]);
     const [view, setView] = useState({list:false,gallery:true});
-    
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
             const aux = JSON.parse(JSON.stringify(productsFound))//'cause of map
             aux.map(e=>{
                 return e.filterCategory = true, e.filterPriceRange=true
             });
-            setFilterProducts(aux)
+            setFilterProducts(aux);
+            if (productsFound.length) {
+                setLoading(false)
+            };
     }, [productsFound]);
-
+    
     const setFilter=(value)=>{
         setFilterProducts(value)
     };
@@ -48,9 +52,11 @@ const FilterContainer = () => {
                    <ProductsView {...{ view, setViewState}}/>
                 </div>
             </div>
-            
             {view.gallery&&<ItemGallery productsState={productsFiltered} />}
             {view.list&&<ItemList productsState={productsFiltered} />}
+            {loading?
+                <Spinner/>
+                :!productsFiltered.length&&<h1>Aquí Va Componente de Productos No Encontrados</h1>}
         </>
     )
 }
