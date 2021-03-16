@@ -5,10 +5,10 @@ const ProductsContainer = () => {
 
 
     return (
-        <>
+        <div className="container">
             <h1>ProductsContainer</h1>
             <FilterContainer/>
-        </>
+        </div>
     )
 }
 

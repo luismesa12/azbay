@@ -6,7 +6,7 @@ const SearchBar = ({ history }) => {
     const {searchValue, setSearchValue} = useSearchContext();
     const goHome = (e) => {
         e.preventDefault();
-        history.push('/')
+        history.push('/items')
     };
 
     return (

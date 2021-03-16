@@ -48,6 +48,7 @@ const FilterContainer = () => {
                    <ProductsView {...{ view, setViewState}}/>
                 </div>
             </div>
+            
             {view.gallery&&<ItemGallery productsState={productsFiltered} />}
             {view.list&&<ItemList productsState={productsFiltered} />}
         </>
