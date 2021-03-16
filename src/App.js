@@ -1,10 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import ProductsContainer from './components/ProductsContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ItemList from './components/ItemListContainer/ItemList';
+import ItemList from './components/ProductsContainer/ItemList';
 import Cart from './components/Cart';
 import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
@@ -26,7 +26,7 @@ function App() {
                 <NavBar />
                 <Switch>
                   <Route exact path='/'>
-                    <ItemListContainer greeting={`Hi! I'm a greeting`} />
+                    <ProductsContainer/>
                   </Route>
                   <Route exact path='/items'>
                     <ItemList />
