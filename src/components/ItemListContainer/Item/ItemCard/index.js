@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../../../../../context/CartContext";
-import FavoriteBtn from "../../../../FavoriteBtn";
-import ItemCount from "../../../ItemCount"
+import { useCartContext } from "../../../../context/CartContext";
+import FavoriteBtn from "../../../FavoriteBtn";
+import ItemCount from "../../ItemCount"
 import ItemCardAdd from "./ItemCardAdd";
 
 

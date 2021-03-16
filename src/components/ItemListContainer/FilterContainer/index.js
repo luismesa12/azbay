@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchContext } from "../../../context/SearchContext";
-import Item from "../ItemList/Item";
+import Item from "../Item";
 import Spinner from "../../Spinner"
 import SortPrice from "../../SortPrice";
 import PriceRange from "../../PriceRange";
