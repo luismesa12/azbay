@@ -3,9 +3,11 @@ import ItemCard from "./ItemCard";
 const ItemGallery = ({ productsState }) => {
     return (
         <>
-            {
-                productsState.map((product) => <span key={product.id}><ItemCard product={product} /></span>)
-            }
+            <div className='card-columns'>
+                {
+                    productsState.map((product) => <span key={product.id}><ItemCard product={product} /></span>)
+                }
+            </div>
         </>
     )
 };

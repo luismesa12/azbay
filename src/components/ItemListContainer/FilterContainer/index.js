@@ -44,7 +44,7 @@ const FilterContainer = () => {
                 </div>
             </div>
             
-            <div className='card-columns'><ItemGallery productsState={productsFiltered} /></div>
+            <ItemGallery productsState={productsFiltered} />
 
         </>
     )

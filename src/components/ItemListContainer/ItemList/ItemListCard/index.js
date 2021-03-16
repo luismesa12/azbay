@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../../../context/CartContext";
 import FavoriteBtn from "../../../FavoriteBtn";
 import ItemCardAdd from "../../ItemGallery/ItemCard/ItemCardAdd";
-import ItemCount from "../../ItemCount";
 
 
-const ItemListCard = ({ product, WithCounter = false }) => {
+const ItemListCard = ({ product}) => {
     const [goToCart, setGoToCart] = useState(false);
     const { addToCart } = useCartContext();
     const onAdd = (count) => {
@@ -38,9 +37,7 @@ const ItemListCard = ({ product, WithCounter = false }) => {
                         {
                             goToCart ?
                                 <Link to='/carrito'><button>Ir al Carrito</button></Link>
-                                : WithCounter ?
-                                    <ItemCount stock={12} initial={1} onAdd={onAdd}></ItemCount>
-                                    : <ItemCardAdd onAdd={onAdd} />
+                                :<ItemCardAdd onAdd={onAdd} />
                         }
                     </div>
 
