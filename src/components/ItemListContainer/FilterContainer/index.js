@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSearchContext } from "../../../context/SearchContext";
-import Item from "../Item";
+import ItemGallery from "../ItemGallery";
 import Spinner from "../../Spinner"
 import SortPrice from "./SortPrice";
 import PriceRange from "./PriceRange";
 import Categories from "./Categories";
+import ProductsView from "./ProductsView";
 
 const FilterContainer = () => {
     const { searchValue, productsFound } = useSearchContext();
@@ -38,9 +39,12 @@ const FilterContainer = () => {
                 <div className="col">
                    <SortPrice {...{ filterProducts, setFilter}}/>
                 </div>
+                <div className="col">
+                   <ProductsView {...{ filterProducts, setFilter}}/>
+                </div>
             </div>
             
-            <div className='card-columns'><Item productsState={productsFiltered} /></div>
+            <div className='card-columns'><ItemGallery productsState={productsFiltered} /></div>
 
         </>
     )

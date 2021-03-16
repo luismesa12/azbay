@@ -1,6 +1,6 @@
 import ItemCard from "./ItemCard";
 
-const Item = ({ productsState }) => {
+const ItemGallery = ({ productsState }) => {
     return (
         <>
             {
@@ -9,4 +9,4 @@ const Item = ({ productsState }) => {
         </>
     )
 };
-export default Item;
+export default ItemGallery;
