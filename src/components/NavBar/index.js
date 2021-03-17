@@ -29,11 +29,9 @@ function NavBar() {
                         <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
                             <NavLink to='/items' className="nav-link">Productos</NavLink>
                         </li>
-                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
-                            href="#">Mi Cuenta</a></li>
-
-                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav"><a className="nav-link"
-                            href="#">Contacto</a></li>
+                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
+                            <NavLink to='/contact' className="nav-link">Contacto</NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>

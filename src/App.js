@@ -11,6 +11,7 @@ import Orders from './components/Cart/Orders';
 import { FavoriteProvider } from './context/FavoriteContext';
 import FavoriteList from './components/FavoriteList';
 import { SearchProvider } from './context/SearchContext';
+import Contact from './components/Contact';
 
 
 
@@ -41,6 +42,9 @@ function App() {
                   </Route>
                   <Route exact path='/myFavorites'>
                     <FavoriteList />
+                  </Route>
+                  <Route exact path='/contact'>
+                    <Contact/>
                   </Route>
                 </Switch>
               </BrowserRouter>
