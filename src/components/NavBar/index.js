@@ -8,7 +8,7 @@ function NavBar() {
     return (
         <>
             <nav id="menu" className="nav navbar navbar-expand-lg navbar-dark bg-dark">
-                <NavLink to='/' className="navbar-brand mb-0 h1">AZbay</NavLink>
+                <NavLink to='/' className="navbar-brand mb-0 h1">Muebles Kandra</NavLink>
                 <NavLink to='/myFavorites'>
                 <FavoriteWidget />
                 </NavLink>
