@@ -2,7 +2,9 @@
 import { Link } from "react-router-dom";
 import { /* CartContext, */ useCartContext } from "../../context/CartContext";
 import CartItem from "./CartItem";
-
+import Button from '@material-ui/core/Button'
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import StoreIcon from '@material-ui/icons/Store';
 
 const Cart = () => {
     const { cart } = useCartContext();
@@ -25,13 +27,28 @@ const Cart = () => {
                                     <h3>
                                         Total a pagar: ${accum}
                                     </h3>
-                                    <Link to='/orders'><button>Finalizar Compra</button></Link>
+                                    <Link to='/orders'>
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            startIcon={<AssignmentTurnedInIcon />}>
+                                            Finalizar Compra
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </>
-                    : <h1>Carrito Vacio <Link to='/'><button>Ir a Comprar</button></Link></h1>
-            }
+                    : <h1>Carrito Vacio
+                        <Link to='/items'>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                startIcon={<StoreIcon/>}>
+                                Ir A Comprar La Mejor Calidad
+                            </Button>
+                        </Link></h1>
+                }
 
         </>
     )

@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../../../context/CartContext';
+import IconButton from '@material-ui/core/IconButton'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+
 
 const FavoriteItem = ({ item, removeFromFavorites }) => {
     const {addToCart}=useCartContext();
@@ -19,10 +25,18 @@ const FavoriteItem = ({ item, removeFromFavorites }) => {
                         <h5 className='my-auto col'>Precio: ${item.price}</h5>
                         {
                             added?
-                                <Link className='my-auto mr-1 col' to='/carrito'><button > Ir a Carrito</button></Link> 
-                                :<button className='my-auto mr-1 col' onClick={handleAddtoCart}>Añadir al Carrito</button>
+                                <Link to='/carrito'>
+                                    <IconButton aria-label="go to cart">
+                                        <ArrowForwardOutlinedIcon /><ShoppingCartIcon />
+                                    </IconButton>
+                                </Link> 
+                                :<IconButton aria-label="" onClick={handleAddtoCart}>
+                                    <AddShoppingCartIcon/>
+                                 </IconButton>
                         }
-                        <button className='my-auto col-1' onClick={() => removeFromFavorites(item)}>x</button>
+                        <IconButton aria-label="delete" onClick={() => removeFromFavorites(item)}>
+                          <DeleteForeverOutlinedIcon/>
+                        </IconButton>
                     </div>
                 </div>
             </div>

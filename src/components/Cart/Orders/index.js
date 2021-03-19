@@ -3,7 +3,8 @@ import firebase from 'firebase/app';
 import db from "../../../firebase";
 import { useState } from "react";
 import AlertOrder from "./AlertOrder";
-
+import Button from '@material-ui/core/Button'
+import SendIcon from '@material-ui/icons/Send';
 
 
 const Orders = () => {
@@ -80,11 +81,16 @@ const Orders = () => {
                                     <div>
                                         <input id='email' placeholder='Email'></input>
                                     </div>
-                                    <button type="submit">Finalizar Orden</button>
+                                    <Button type="submit"
+                                        variant="contained"
+                                        color="primary"
+                                        startIcon={<SendIcon />}>
+                                        Finalizar Orden
+                                    </Button>
                                 </form>
                             </div>
                         </div>
-                        <AlertOrder currentOrder={currentOrder} orderOk={orderOk} orderError={orderError}/>
+                        <AlertOrder currentOrder={currentOrder} orderOk={orderOk} orderError={orderError} />
                     </div>
 
                 </>

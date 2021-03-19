@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../../../context/CartContext";
 import FavoriteBtn from "../../../FavoriteBtn";
 import ItemCardAdd from "../../ItemGallery/ItemCard/ItemCardAdd";
+import IconButton from '@material-ui/core/IconButton'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 
-
-const ItemListCard = ({ product}) => {
+const ItemListCard = ({ product }) => {
     const [goToCart, setGoToCart] = useState(false);
     const { addToCart } = useCartContext();
     const onAdd = (count) => {
@@ -36,9 +38,13 @@ const ItemListCard = ({ product}) => {
                         <FavoriteBtn item={product} />
                         {
                             goToCart ?
-                                <Link to='/carrito'><button>Ir al Carrito</button></Link>
-                                :<ItemCardAdd onAdd={onAdd} />
+                                <Link to='/carrito'><IconButton aria-label="go to cart">
+                                    <ArrowForwardOutlinedIcon /><ShoppingCartIcon />
+                                </IconButton>
+                                </Link>
+                                : <ItemCardAdd onAdd={onAdd} />
                         }
+
                     </div>
 
                 </div>

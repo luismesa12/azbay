@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Counter from "./Counter";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import IconButton from '@material-ui/core/IconButton'
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -12,7 +14,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <>
             <Counter count={count} max={stock} setCount={setCount}/>
-            <button onClick={handlerOnAdd}>Agregar</button>
+            <IconButton aria-label="addToCart" onClick={handlerOnAdd}>
+              <AddShoppingCartIcon/>
+            </IconButton>
         </>
     )
 }

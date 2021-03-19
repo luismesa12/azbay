@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useFavoriteContext } from '../../context/FavoriteContext'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import IconButton from '@material-ui/core/IconButton'
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const FavoriteBtn = ({item}) => {
     const{addToFavorites, removeFromFavorites, indexInFavorites}=useFavoriteContext();
@@ -21,7 +24,9 @@ const FavoriteBtn = ({item}) => {
     
     return (
         <>
-            <button onClick={toggleCheckedFav}>{checkedFav?<i>❤</i>:<i>♡</i>}</button>
+            <IconButton aria-label="favorite" onClick={toggleCheckedFav}>
+            {checkedFav?<FavoriteIcon style={{ color: 'red' }}/>:<FavoriteBorderIcon />}
+            </IconButton>
         </>
     )
 }

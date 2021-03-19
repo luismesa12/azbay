@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../../context/CartContext";
 import FavoriteBtn from "../../FavoriteBtn";
 import ItemCount from "../../ItemCount"
+import IconButton from '@material-ui/core/IconButton'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 
 
 const DetailCard = ({ product }) => {
@@ -31,7 +34,11 @@ const DetailCard = ({ product }) => {
                     <div className="col">
                         {
                             goToCart ?
-                                <Link to='/carrito'><button>Ir al Carrito</button></Link>
+                                <Link to='/carrito'>
+                                    <IconButton aria-label="go to cart">
+                                        <ArrowForwardOutlinedIcon /><ShoppingCartIcon />
+                                    </IconButton>
+                                </Link>
                                 : <ItemCount stock={12} initial={1} onAdd={onAdd}></ItemCount>
                         }
                     </div>
