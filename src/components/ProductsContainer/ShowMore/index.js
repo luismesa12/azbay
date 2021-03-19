@@ -1,4 +1,5 @@
 import  Button  from "@material-ui/core/Button";
+import CachedIcon from '@material-ui/icons/Cached';
 import { useEffect, useState } from "react";
 
 const ShowMore = ({ productsState, handleProductsSlice, productsPerPag = 6 }) => {
@@ -30,12 +31,13 @@ const ShowMore = ({ productsState, handleProductsSlice, productsPerPag = 6 }) =>
         <>
             {thereAreMore 
             &&<Button 
+            startIcon={<CachedIcon/>}
             color="primary"
             variant="outlined"
             fullWidth
             size="large"
             onClick={showMeMore}>
-            Mostrar +</Button>}
+            Mostrar Más Productos</Button>}
         </>
     )
 }
