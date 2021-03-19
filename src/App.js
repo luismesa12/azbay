@@ -26,7 +26,10 @@ function App() {
                 <NavBar />
                 <Switch>
                   <Route exact path='/'>
+                    
+                    <img width='100%' src="https://i.imgur.com/0MQCOJz.jpg"/>
                     <h1>Aquì se Debe Construir HOME</h1>
+                   
                   </Route>
                   <Route exact path='/items'>
                     <ProductsContainer/>

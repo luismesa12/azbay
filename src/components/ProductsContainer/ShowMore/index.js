@@ -1,3 +1,4 @@
+import  Button  from "@material-ui/core/Button";
 import { useEffect, useState } from "react";
 
 const ShowMore = ({ productsState, handleProductsSlice, productsPerPag = 6 }) => {
@@ -27,7 +28,14 @@ const ShowMore = ({ productsState, handleProductsSlice, productsPerPag = 6 }) =>
     }
     return (
         <>
-            {thereAreMore && <button onClick={showMeMore}>Mostrar +</button>}
+            {thereAreMore 
+            &&<Button 
+            color="primary"
+            variant="outlined"
+            fullWidth
+            size="large"
+            onClick={showMeMore}>
+            Mostrar +</Button>}
         </>
     )
 }
