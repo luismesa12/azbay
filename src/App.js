@@ -12,49 +12,54 @@ import { FavoriteProvider } from './context/FavoriteContext';
 import FavoriteList from './components/FavoriteList';
 import { SearchProvider } from './context/SearchContext';
 import Contact from './components/Contact';
+// Mui
+import { ThemeProvider } from '@material-ui/core/styles'
+import theme from './themeConfig';
 
 
 
 function App() {
   return (
     <>
-      <ProductProvider>
-        <SearchProvider>
-          <CartProvider>
-            <FavoriteProvider>
-              <BrowserRouter>
-                <NavBar />
-                <Switch>
-                  <Route exact path='/'>
-                    
-                    <img width='100%' src="https://i.imgur.com/0MQCOJz.jpg"/>
-                    <h1>Aquì se Debe Construir HOME</h1>
-                   
-                  </Route>
-                  <Route exact path='/items'>
-                    <ProductsContainer/>
-                  </Route>
-                  <Route exact path='/item/:id'>
-                    <ItemDetailContainer />
-                  </Route>
-                  <Route exact path='/carrito'>
-                    <Cart />
-                  </Route>
-                  <Route exact path='/orders'>
-                    <Orders />
-                  </Route>
-                  <Route exact path='/myFavorites'>
-                    <FavoriteList />
-                  </Route>
-                  <Route exact path='/contact'>
-                    <Contact/>
-                  </Route>
-                </Switch>
-              </BrowserRouter>
-            </FavoriteProvider>
-          </CartProvider>
-        </SearchProvider>
-      </ProductProvider>
+      <ThemeProvider theme={theme}>
+        <ProductProvider>
+          <SearchProvider>
+            <CartProvider>
+              <FavoriteProvider>
+                <BrowserRouter>
+                  <NavBar />
+                  <Switch>
+                    <Route exact path='/'>
+
+                      <img width='100%' src="https://i.imgur.com/0MQCOJz.jpg" />
+                      <h1>Aquì se Debe Construir HOME</h1>
+
+                    </Route>
+                    <Route exact path='/items'>
+                      <ProductsContainer />
+                    </Route>
+                    <Route exact path='/item/:id'>
+                      <ItemDetailContainer />
+                    </Route>
+                    <Route exact path='/carrito'>
+                      <Cart />
+                    </Route>
+                    <Route exact path='/orders'>
+                      <Orders />
+                    </Route>
+                    <Route exact path='/myFavorites'>
+                      <FavoriteList />
+                    </Route>
+                    <Route exact path='/contact'>
+                      <Contact />
+                    </Route>
+                  </Switch>
+                </BrowserRouter>
+              </FavoriteProvider>
+            </CartProvider>
+          </SearchProvider>
+        </ProductProvider>
+      </ThemeProvider>
     </>
   );
 }
