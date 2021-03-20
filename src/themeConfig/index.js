@@ -1,11 +1,12 @@
 import { createMuiTheme } from "@material-ui/core/styles";
+import brown from '@material-ui/core/colors/brown';
+import pink from '@material-ui/core/colors/pink';
 
 const theme = createMuiTheme({
-    palette:{
-        primary:{
-            main: '#000'
-        }
-    }
+    palette: {
+        primary: brown,
+        secondary: pink,
+      },
 });
 
 export default theme;
