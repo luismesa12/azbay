@@ -11,6 +11,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useState } from 'react';
+import WeekendIcon from '@material-ui/icons/Weekend';
+import Box from '@material-ui/core/Box';
+import ViewListIcon from '@material-ui/icons/ViewList';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
@@ -33,6 +37,7 @@ const useStyles = makeStyles(theme => ({
     widget: {
         marginRight: theme.spacing(2),
     },
+
 }));
 
 function NavBar() {
@@ -48,7 +53,7 @@ function NavBar() {
     const classes = useStyles();
     return (
         <>
-            <AppBar position='fixed' color="transparent">
+            <AppBar position='fixed' color="inherit">
                 <Toolbar>
                     <div>
                         <IconButton aria-controls="simple-menu" color='inherit' aria-haspopup="true" onClick={handleClick}>
@@ -61,14 +66,15 @@ function NavBar() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}>Kandra</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/items' component={NavLink} >Productos</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} >Contacto</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}><Box px={1}><WeekendIcon/></Box>Kandra</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/items' component={NavLink} ><Box px={1}><ViewListIcon/></Box>Productos</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon/></Box>Contacto</MenuItem>
                         </Menu>
                     </div>
                     <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='inherit'>
                         Muebles Kandra
                     </Typography>
+                    <SearchBar />
                     <NavLink to='/myFavorites' className={classes.widget}>
                         <FavoriteWidget />
                     </NavLink>
