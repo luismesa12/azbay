@@ -10,6 +10,10 @@ const theme = createMuiTheme({
     shape:{
       borderRadius: 30,
     },
+    overrides:{
+      
+    },
+    
 });
 
 export default theme;

@@ -37,6 +37,10 @@ const useStyles = makeStyles(theme => ({
     widget: {
         marginRight: theme.spacing(2),
     },
+    searchBar:{
+        flexGrow: 0.5,
+        marginRight: theme.spacing(2),
+    },
 
 }));
 
@@ -74,7 +78,10 @@ function NavBar() {
                     <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='inherit'>
                         Muebles Kandra
                     </Typography>
+                    <Box className={classes.searchBar}>
+
                     <SearchBar />
+                    </Box>
                     <NavLink to='/myFavorites' className={classes.widget}>
                         <FavoriteWidget />
                     </NavLink>
