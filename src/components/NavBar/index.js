@@ -15,30 +15,31 @@ import WeekendIcon from '@material-ui/icons/Weekend';
 import Box from '@material-ui/core/Box';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
     menuButton: {
         marginRight: theme.spacing(2),
     },
-    menuItem:{
-        '&:hover':{
-            color:'inherit',
+    menuItem: {
+        '&:hover': {
+            color: 'inherit',
             textDecoration: 'none'
         },
     },
     title: {
-        flexGrow: 1,
-        '&:hover':{
-            color:'inherit',
+        flexGrow: 2,
+        '&:hover': {
+            color: 'inherit',
             textDecoration: 'none'
         },
     },
     widget: {
         marginRight: theme.spacing(2),
     },
-    searchBar:{
-        flexGrow: 0.5,
+    searchBar: {
+        flexGrow: 1,
         marginRight: theme.spacing(2),
     },
 
@@ -63,6 +64,7 @@ function NavBar() {
                         <IconButton aria-controls="simple-menu" color='inherit' aria-haspopup="true" onClick={handleClick}>
                             <MenuIcon />
                         </IconButton>
+
                         <Menu
                             id="simple-menu"
                             anchorEl={anchorEl}
@@ -70,17 +72,21 @@ function NavBar() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}><Box px={1}><WeekendIcon/></Box>Kandra</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/items' component={NavLink} ><Box px={1}><ViewListIcon/></Box>Productos</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon/></Box>Contacto</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}><Box px={1}><WeekendIcon /></Box>Kandra</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/items' component={NavLink} ><Box px={1}><ViewListIcon /></Box>Productos</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon /></Box>Contacto</MenuItem>
                         </Menu>
                     </div>
-                    <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='inherit'>
-                        Muebles Kandra
-                    </Typography>
+                    <img src='https://i.imgur.com/DIirfFw.png' width='40' alt='logo' />
+                    <Hidden smDown>
+                        <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='inherit'>
+                            Muebles Kandra
+                        </Typography>
+                    </Hidden>
+
                     <Box className={classes.searchBar}>
 
-                    <SearchBar />
+                        <SearchBar />
                     </Box>
                     <NavLink to='/myFavorites' className={classes.widget}>
                         <FavoriteWidget />
