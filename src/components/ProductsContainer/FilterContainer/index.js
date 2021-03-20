@@ -23,8 +23,11 @@ const FilterContainer = () => {
             if (productsFound.length) {
                 setLoading(false)
             };
+            if (searchValue.length) {
+                setLoading(false)
+            };
     }, [productsFound]);
-    
+    console.log(productsFound);
     const setFilter=(value)=>{
         setFilterProducts(value)
     };
