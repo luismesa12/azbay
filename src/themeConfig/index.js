@@ -7,6 +7,9 @@ const theme = createMuiTheme({
         primary: brown,
         secondary: pink,
       },
+    shape:{
+      borderRadius: 30,
+    },
 });
 
 export default theme;
