@@ -15,12 +15,14 @@ import Contact from './components/Contact';
 // Mui
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './themeConfig';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 
 
 function App() {
   return (
     <>
+      <CssBaseline />
       <ThemeProvider theme={theme}>
         <ProductProvider>
           <SearchProvider>
