@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ShowMore from "../ShowMore";
 import ItemListCard from "./ItemListCard";
+import Box from '@material-ui/core/Box';
+
 
 const ItemList = ({ productsState }) => {
     const [productsSlice, setproductsSlice] = useState([])
@@ -10,12 +12,20 @@ const ItemList = ({ productsState }) => {
 
     return (
         <>
-            <div className="container">
+        <Box pt={5}>
+        
                 {
-                    productsSlice.map((product) => <span key={product.id}><ItemListCard product={product} /></span>)
+                    productsSlice.map((product) => 
+                    <Box pb={1} key={product.id}>
+                        <ItemListCard product={product} />
+                    </Box>)
                 }
-            </div>
-            <ShowMore {...{ productsState, handleProductsSlice }} productsPerPag={4} />
+            <Box px={5} pb={5}>
+                <ShowMore {...{ productsState, handleProductsSlice }} productsPerPag={4} />
+            </Box>
+            
+        </Box>
+            
         </>
     )
 };
