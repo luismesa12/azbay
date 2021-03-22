@@ -8,10 +8,6 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 
 
-
-
-
-
 const FormPriceRange = ({ getMin, getMax, filterRange, reset }) => {
     const { searchValue } = useSearchContext();
     const formRef = useRef()
@@ -20,7 +16,7 @@ const FormPriceRange = ({ getMin, getMax, filterRange, reset }) => {
     }, [searchValue])
     return (
         <form onSubmit={filterRange} ref={formRef}>
-            <Grid container spacing={0}>
+            <Grid container spacing={0}  style={{textAlign:'center'}}>
                 <Grid item xs={12}>
 
                     <Typography gutterBottom align='center' variant="subtitle2" color="initial">Rango de Precio</Typography>
@@ -34,14 +30,13 @@ const FormPriceRange = ({ getMin, getMax, filterRange, reset }) => {
                                 type="number"
                                 variant="outlined"
                                 size="small"
-                                fullWidth
+                                
                                 label="Precio min"
                                 onChange={(e) => { getMin(e.target.value) }}
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                fullWidth
                                 type="number"
                                 variant="outlined"
                                 size="small"
@@ -49,7 +44,6 @@ const FormPriceRange = ({ getMin, getMax, filterRange, reset }) => {
                                 onChange={(e) => { getMax(e.target.value) }}
                             />
                         </Grid>
-
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>

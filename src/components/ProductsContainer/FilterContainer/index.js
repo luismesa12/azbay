@@ -7,6 +7,8 @@ import PriceRange from "./PriceRange";
 import Categories from "./Categories";
 import ProductsView from "./ProductsView";
 import ItemList from "../ItemList";
+import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box';
 
 const FilterContainer = () => {
     const { searchValue, productsFound } = useSearchContext();
@@ -41,21 +43,22 @@ const FilterContainer = () => {
 
     return (
         <>
-            <div>
+
+            <Box>
                 <Categories {...{ filterProducts, setFilter }} />
-            </div>
-
-            <div>
-                <ProductsView {...{ view, setViewState }} />
-            </div>
-
-            <div>
-                <PriceRange {...{ filterProducts, setFilter }} />
-            </div>
-
-            <div>
-                <SortPrice {...{ filterProducts, setFilter }} />
-            </div>
+            </Box>
+            
+            <Grid container spacing={1}>
+                <Grid item lg={4}>
+                    <SortPrice {...{ filterProducts, setFilter }} />
+                </Grid>
+                <Grid item lg={4}>
+                    <PriceRange {...{ filterProducts, setFilter }} />
+                </Grid>
+                <Grid item lg={4}>
+                    <ProductsView {...{ view, setViewState }} />
+                </Grid>
+            </Grid>
 
             {view.gallery && <ItemGallery productsState={productsFiltered} />}
             {view.list && <ItemList productsState={productsFiltered} />}
