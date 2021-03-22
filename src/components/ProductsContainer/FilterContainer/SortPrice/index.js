@@ -18,7 +18,7 @@ const SortPrice = ({ filterProducts, setFilter }) => {
 
     return (
         <Box>
-            <Typography align='center' variant="subtitle2" color="initial">Ordenar</Typography>
+            <Typography gutterBottom align='center' variant="subtitle2" color="initial">Ordenar</Typography>
             <Grid container justify="center">
             <BtnSort ascending={ascending} descending={descending} />
             </Grid>

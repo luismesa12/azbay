@@ -6,7 +6,7 @@ import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 const BtnSort = ({ascending, descending}) => {
     return (
         <>
-            <ButtonGroup variant="text" color="primary" aria-label="sortPrice">
+            <ButtonGroup variant="text" color="primary" aria-label="sortPrice" size="large">
               <Button onClick={ascending} endIcon={<TrendingUpIcon/>}>Precio</Button>
               <Button onClick={descending} endIcon={<TrendingDownIcon/>}>Precio</Button>
             </ButtonGroup>

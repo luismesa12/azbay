@@ -39,7 +39,7 @@ const Categories = ({ filterProducts, setFilter }) => {
     return (
         <>
             <Box>
-                <Typography variant="subtitle2" color="initial" align='center'>Categorías</Typography>
+                <Typography gutterBottom variant="subtitle2" color="initial" align='center'>Categorías</Typography>
                 <Grid container justify="center">
                     <BtnCategories {...{ cAll, cAAA, cBBB, cCCC }} />
                 </Grid>

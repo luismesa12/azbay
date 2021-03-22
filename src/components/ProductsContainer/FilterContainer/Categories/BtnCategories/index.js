@@ -3,7 +3,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup'
 const BtnCategories = ({ cAll, cAAA, cBBB, cCCC }) => {
     return (
         <div>
-            <ButtonGroup variant="text" color="primary" aria-label="categories">
+            <ButtonGroup size="large" variant="text" color="primary" aria-label="categories">
                 <Button onClick={cAll}>Todos</Button>
                 <Button onClick={cAAA}>AAA</Button>
                 <Button onClick={cBBB}>BBB</Button>
