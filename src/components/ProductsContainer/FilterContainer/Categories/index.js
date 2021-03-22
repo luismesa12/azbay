@@ -2,6 +2,8 @@ import BtnCategories from "./BtnCategories"
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid'
+import { Divider } from "@material-ui/core";
+
 
 const Categories = ({ filterProducts, setFilter }) => {
 
@@ -43,6 +45,9 @@ const Categories = ({ filterProducts, setFilter }) => {
                 <Grid container justify="center">
                     <BtnCategories {...{ cAll, cAAA, cBBB, cCCC }} />
                 </Grid>
+                <Box mt={2}>
+                    <Divider  light />
+                </Box>
             </Box>
         </>
     )
