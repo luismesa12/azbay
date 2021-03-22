@@ -45,15 +45,16 @@ const FilterContainer = () => {
                 <div className="col">
                 <Categories {...{ filterProducts, setFilter}} />
                 </div>
-                <div className="col">
-                    <PriceRange {...{ filterProducts, setFilter}}/>
-                </div>
+                
                 <div className="col">
                    <SortPrice {...{ filterProducts, setFilter}}/>
                 </div>
                 <div className="col">
                    <ProductsView {...{ view, setViewState}}/>
                 </div>
+            </div>
+            <div>
+                <PriceRange {...{ filterProducts, setFilter}}/>
             </div>
             {view.gallery&&<ItemGallery productsState={productsFiltered} />}
             {view.list&&<ItemList productsState={productsFiltered} />}
