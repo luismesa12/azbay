@@ -16,16 +16,16 @@ const FormPriceRange = ({ getMin, getMax, filterRange, reset }) => {
     }, [searchValue])
     return (
         <form onSubmit={filterRange} ref={formRef}>
-            <Grid container spacing={0}  style={{textAlign:'center'}}>
+            <Grid container spacing={0}  style={{textAlign:'center'}} justify="center">
                 <Grid item xs={12}>
 
                     <Typography gutterBottom align='center' variant="subtitle2" color="initial">Rango de Precio</Typography>
 
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={8}>
                     <Grid container spacing={1}>
 
-                        <Grid item xs={12}>
+                        <Grid item xs={6}>
                             <TextField
                                 type="number"
                                 variant="outlined"
@@ -35,7 +35,7 @@ const FormPriceRange = ({ getMin, getMax, filterRange, reset }) => {
                                 onChange={(e) => { getMin(e.target.value) }}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={6}>
                             <TextField
                                 type="number"
                                 variant="outlined"

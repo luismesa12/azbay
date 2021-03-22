@@ -48,7 +48,7 @@ const FilterContainer = () => {
                 <Categories {...{ filterProducts, setFilter }} />
             </Box>
             
-            <Grid container spacing={1}>
+            <Grid container spacing={1}  justify="space-between">
                 <Grid item lg={4}>
                     <SortPrice {...{ filterProducts, setFilter }} />
                 </Grid>
