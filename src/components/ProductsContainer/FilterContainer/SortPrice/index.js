@@ -1,23 +1,29 @@
 import BtnSort from "./BtnSort"
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid'
 
-const SortPrice = ({ filterProducts, setFilter}) => {
+const SortPrice = ({ filterProducts, setFilter }) => {
     const tempProducts = [...filterProducts];
-    
-    const ascending = () =>{
-        tempProducts.sort((a,b)=>a.price-b.price);
+
+    const ascending = () => {
+        tempProducts.sort((a, b) => a.price - b.price);
         setFilter(tempProducts);
     };
 
-    const descending = () =>{
-        tempProducts.sort((a,b)=>b.price-a.price);
+    const descending = () => {
+        tempProducts.sort((a, b) => b.price - a.price);
         setFilter(tempProducts);
-    };    
+    };
 
     return (
-        <>  
-            <p><b><i>SortPrice</i></b></p>
-            <BtnSort ascending={ascending} descending={descending}/>
-        </>
+        <Box>
+            <Typography align='center' variant="subtitle2" color="initial">Ordenar</Typography>
+            <Grid container justify="center">
+            <BtnSort ascending={ascending} descending={descending} />
+            </Grid>
+        </Box>
+        
     )
 }
 

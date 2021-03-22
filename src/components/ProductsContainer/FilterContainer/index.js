@@ -11,56 +11,57 @@ import ItemList from "../ItemList";
 const FilterContainer = () => {
     const { searchValue, productsFound } = useSearchContext();
     const [filterProducts, setFilterProducts] = useState([]);
-    const [view, setView] = useState({list:false,gallery:true});
+    const [view, setView] = useState({ list: false, gallery: true });
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-            const aux = JSON.parse(JSON.stringify(productsFound))//'cause of map
-            aux.map(e=>{
-                return e.filterCategory = true, e.filterPriceRange=true
-            });
-            setFilterProducts(aux);
-            if (productsFound.length) {
-                setLoading(false)
-            };
-            if (searchValue.length) {
-                setLoading(false)
-            };
+        const aux = JSON.parse(JSON.stringify(productsFound))//'cause of map
+        aux.map(e => {
+            return e.filterCategory = true, e.filterPriceRange = true
+        });
+        setFilterProducts(aux);
+        if (productsFound.length) {
+            setLoading(false)
+        };
+        if (searchValue.length) {
+            setLoading(false)
+        };
     }, [productsFound]);
     console.log(productsFound);
-    const setFilter=(value)=>{
+    const setFilter = (value) => {
         setFilterProducts(value)
     };
-    
-    const productsFiltered = filterProducts.filter(e=>{
-        return e.filterCategory === true && e.filterPriceRange===true
+
+    const productsFiltered = filterProducts.filter(e => {
+        return e.filterCategory === true && e.filterPriceRange === true
     });
-    const setViewState= (value)=>{
+    const setViewState = (value) => {
         setView(value)
     };
 
     return (
-        <>  
-            <div className="row">
-                <div className="col">
-                <Categories {...{ filterProducts, setFilter}} />
-                </div>
-                
-                <div className="col">
-                   <SortPrice {...{ filterProducts, setFilter}}/>
-                </div>
-                <div className="col">
-                   <ProductsView {...{ view, setViewState}}/>
-                </div>
-            </div>
+        <>
             <div>
-                <PriceRange {...{ filterProducts, setFilter}}/>
+                <Categories {...{ filterProducts, setFilter }} />
             </div>
-            {view.gallery&&<ItemGallery productsState={productsFiltered} />}
-            {view.list&&<ItemList productsState={productsFiltered} />}
-            {loading?
-                <Spinner/>
-                :!productsFiltered.length&&<h1>Aquí Va Componente de Productos No Encontrados</h1>}
+
+            <div>
+                <ProductsView {...{ view, setViewState }} />
+            </div>
+
+            <div>
+                <PriceRange {...{ filterProducts, setFilter }} />
+            </div>
+
+            <div>
+                <SortPrice {...{ filterProducts, setFilter }} />
+            </div>
+
+            {view.gallery && <ItemGallery productsState={productsFiltered} />}
+            {view.list && <ItemList productsState={productsFiltered} />}
+            {loading ?
+                <Spinner />
+                : !productsFiltered.length && <h1>Aquí Va Componente de Productos No Encontrados</h1>}
         </>
     )
 }
