@@ -73,7 +73,7 @@ function NavBar() {
                             onClose={handleClose}
                         >
                             <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}><Box px={1}><WeekendIcon /></Box>Kandra</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/items' component={NavLink} ><Box px={1}><ViewListIcon /></Box>Productos</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink} ><Box px={1}><ViewListIcon /></Box>Productos</MenuItem>
                             <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon /></Box>Contacto</MenuItem>
                         </Menu>
                     </div>

@@ -5,10 +5,12 @@ const ProductsContainer = () => {
 
 
     return (
+        <>
+        <img width='100%' src="https://i.imgur.com/0MQCOJz.jpg" />
         <div className="container">
-            <h1>ProductsContainer</h1>
             <FilterContainer/>
         </div>
+        </>
     )
 }
 

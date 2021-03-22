@@ -46,7 +46,7 @@ const FilterContainer = () => {
 
     return (
         <>
-            <Box pt={1}>
+            <Box pt={3}>
                 <Grid container justify="center">
                     <Categories {...{ filterProducts, setFilter }} />
                 </Grid>

@@ -40,7 +40,7 @@ const Cart = () => {
                         </div>
                     </>
                     : <h1>Carrito Vacio
-                        <Link to='/items'>
+                        <Link to='/'>
                             <Button
                                 variant="contained"
                                 color="primary"
