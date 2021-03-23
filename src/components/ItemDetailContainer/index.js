@@ -20,7 +20,6 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <h1>ItemDetailContainer</h1>
             {loading ? <Spinner /> : <><DetailCard product={itemDetail}/></>}
         </>);
 };
