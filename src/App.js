@@ -16,6 +16,7 @@ import Contact from './components/Contact';
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './themeConfig';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import MyOrders from './components/MyOrders';
 
 
 
@@ -42,6 +43,9 @@ function App() {
                     </Route>
                     <Route exact path='/orders'>
                       <Orders />
+                    </Route>
+                    <Route exact path='/myorders'>
+                      <MyOrders/>
                     </Route>
                     <Route exact path='/myFavorites'>
                       <FavoriteList />

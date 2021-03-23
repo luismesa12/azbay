@@ -177,6 +177,7 @@ const Orders = () => {
                                     </Grid>
                                     <Box my={3}>
                                         <Button type="submit"
+                                            disabled={!Boolean(accum)}
                                             variant="contained"
                                             color="primary"
                                             startIcon={<SendIcon />}>
