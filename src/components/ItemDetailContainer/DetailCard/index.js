@@ -6,7 +6,7 @@ import ItemCount from "../../ItemCount"
 import IconButton from '@material-ui/core/IconButton'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
-import { Box, Typography, Button, Grid, Container, Card, CardMedia, TextField, Divider } from '@material-ui/core';
+import { Box, Typography, Grid, Container, Card,  } from '@material-ui/core';
 
 
 const DetailCard = ({ product }) => {

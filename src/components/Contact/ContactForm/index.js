@@ -1,38 +1,70 @@
-const ContactForm = ({ name, email, phone, msg, handleName, handleEmail, handlePhone, handleMsg, sendMsg }) => {
+import { Box, Typography, Button, Grid, Container, Card, TextField,  } from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+import { Alert, AlertTitle } from '@material-ui/lab';
 
+const ContactForm = ({ name, email, phone, msg, open,handleClose, handleName, handleEmail, handlePhone, handleMsg, sendMsg }) => {
+    
+    
     return (
-        <div className="container">
-            <p><b><i>ContactForm</i></b></p>
-            <form onSubmit={sendMsg}>
-                <div className="mb-1">
-                    <label>Nombre:</label>
-                    <div>
-                        <input type="text" placeholder="Nombre" onChange={handleName} value={name} />
-                    </div>
-                </div>
-                <div className="mb-1">
-                    <label>Email:</label>
-                    <div>
-                        <input type="email" placeholder="Email" onChange={handleEmail} value={email} />
-                    </div>
-
-                </div>
-                <div className="mb-1">
-                    <label >Télefono:</label>
-                    <div>
-                        <input type="text" placeholder="Télefono" onChange={handlePhone} value={phone} />
-                    </div>
-                </div>
-                <div className="mb-4">
-                    <label>Mensaje:</label>
-                    <div>
-                        <textarea rows="3" placeholder="Cuéntanos..." onChange={handleMsg} value={msg} />
-                    </div>
-                </div>
-                <button type="submit" className="btn btn-outline-dark my-2">Enviar Mensaje</button>
-                <button type="button" className="btn btn-secondary my-2"> Limpiar Formulario</button>
-            </form>
-        </div>
+        <Container maxWidth="md">
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert  severity="success">
+            <AlertTitle>Recibimos tu mensaje y ya estamos trabajando en ello!</AlertTitle>
+        </Alert>
+      </Snackbar>
+            <Card >
+                <Box m={2} mb={4}>
+                    <Grid container spacing={1} align='center'>
+                        <Grid item xs>
+                            <Typography variant="h5" color="initial">Cuéntanos!</Typography>
+                            <form onSubmit={sendMsg}>
+                                <Box mb={2}>
+                                    <TextField
+                                        id="NombreContact"
+                                        label="Nombre:"
+                                        value={name}
+                                        onChange={handleName}
+                                        required
+                                    />
+                                </Box>
+                                <Box m={2}>
+                                    <TextField
+                                        id="EmailContact"
+                                        label="Email"
+                                        onChange={handleEmail}
+                                        value={email}
+                                        required
+                                    />
+                                </Box>
+                                <Box m={2}>
+                                    <TextField
+                                        id="TélefonoContact"
+                                        label="Télefono"
+                                        onChange={handlePhone}
+                                        value={phone}
+                                        required
+                                    />
+                                </Box>
+                                <Box m={2}>
+                                    <TextField
+                                        id="MensajeContact"
+                                        label="Mensaje..."
+                                        onChange={handleMsg}
+                                        value={msg}
+                                        multiline
+                                        rows={4}
+                                        required
+                                    />
+                                </Box>
+                                <Button type="submit" variant="contained" color="primary">
+                                    Enviar Mensaje
+                                </Button>
+                            </form>
+                        </Grid>
+                    </Grid>
+                </Box>
+            </Card>
+        </Container>
     )
 }
 
