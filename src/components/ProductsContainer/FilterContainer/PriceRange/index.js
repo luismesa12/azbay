@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormPriceRange from "./FormPriceRange";
 
-const PriceRange = ({filterProducts, setFilter}) => {
+const PriceRange = ({filterProducts, setFilter,setwhRange}) => {
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(0);
 
-
+   
     const filterRange =(e)=>{
         e.preventDefault();
         const aux = JSON.parse(JSON.stringify(filterProducts));
@@ -15,7 +15,8 @@ const PriceRange = ({filterProducts, setFilter}) => {
                 e.filterPriceRange=false
             }
         })
-        setFilter(aux)
+        setFilter(aux);
+        (()=>setwhRange([min,max]))();
     };
     const getMin=(value)=>{
         setMin(value);
@@ -29,7 +30,8 @@ const PriceRange = ({filterProducts, setFilter}) => {
         aux.map(e=>{
             return e.filterPriceRange=true
         })
-        setFilter(aux)
+        setFilter(aux);
+        (()=>setwhRange([false,false]))();
     };
     
     return (

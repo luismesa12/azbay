@@ -12,13 +12,18 @@ import Box from '@material-ui/core/Box';
 import { Divider } from "@material-ui/core";
 import Hidden from '@material-ui/core/Hidden';
 import ProductsNotFound from "./ProductsNotFound";
+import FilterIndicator from "./FilterIndicator";
 
 
 const FilterContainer = () => {
-    const { searchValue, productsFound } = useSearchContext();
+    const { searchValue, productsFound, setSearchValue } = useSearchContext();
     const [filterProducts, setFilterProducts] = useState([]);
     const [view, setView] = useState({ list: false, gallery: true });
     const [loading, setLoading] = useState(true);
+    const [whCategory, setwhCategory] = useState('')
+    const [whRange, setwhRange] = useState('')
+    const [whSort, setWhSort] = useState('')
+
 
     useEffect(() => {
         const aux = JSON.parse(JSON.stringify(productsFound))//'cause of map
@@ -48,18 +53,18 @@ const FilterContainer = () => {
         <>
             <Box pt={3}>
                 <Grid container justify="center">
-                    <Categories {...{ filterProducts, setFilter }} />
+                    <Categories {...{ filterProducts, setFilter,setwhCategory }} />
                 </Grid>
             </Box>
 
             <Box py={3}>
                 <Grid container spacing={1} justify="space-evenly">
                     <Grid item lg={4} md={4} xs={12}>
-                        <SortPrice {...{ filterProducts, setFilter }} />
+                        <SortPrice {...{ filterProducts, setFilter,setWhSort }} />
                         <Hidden mdUp> <Box mt={2}><Divider variant="middle" light/></Box> </Hidden>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <PriceRange {...{ filterProducts, setFilter }} />
+                        <PriceRange {...{ filterProducts, setFilter,setwhRange }} />
                         <Hidden mdUp> <Box mt={2}><Divider variant="middle" light/></Box> </Hidden>
                     </Grid>
                     <Grid item lg={4} md={2} xs={12}>
@@ -70,7 +75,7 @@ const FilterContainer = () => {
             <Divider variant="middle" light/>
 
             
-            
+            <FilterIndicator {...{ view,  searchValue, whCategory, whRange,whSort, setSearchValue}}/>
             {view.gallery && <ItemGallery productsState={productsFiltered} />}
             {view.list && <ItemList productsState={productsFiltered} />}
             {loading ?

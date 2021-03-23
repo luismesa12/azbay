@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import { Divider } from "@material-ui/core";
 
 
-const Categories = ({ filterProducts, setFilter }) => {
+const Categories = ({ filterProducts, setFilter,setwhCategory }) => {
 
     const categoryAAA = JSON.parse(JSON.stringify(filterProducts))
     categoryAAA.map(e => {
@@ -33,10 +33,22 @@ const Categories = ({ filterProducts, setFilter }) => {
         return e.filterCategory = true
     });
 
-    const cAll = () => setFilter(categoryAll);
-    const cAAA = () => setFilter(categoryAAA);
-    const cBBB = () => setFilter(categoryBBB);
-    const cCCC = () => setFilter(categoryCCC);
+    const cAll = () => {
+        setFilter(categoryAll);
+        (()=>setwhCategory('All'))();
+    };
+    const cAAA = () => {
+        setFilter(categoryAAA);
+        (()=>setwhCategory('AAA'))();
+    };
+    const cBBB = () => {
+        setFilter(categoryBBB);
+        (()=>setwhCategory('BBB'))();
+    };
+    const cCCC = () => {
+        setFilter(categoryCCC);
+        (()=>setwhCategory('CCC'))();
+    };
 
     return (
         <>

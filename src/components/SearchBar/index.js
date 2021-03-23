@@ -18,6 +18,7 @@ const SearchBar = ({ history }) => {
     <Box px={1}>
     <form onSubmit={goHome}>
                 <TextField
+                value={searchValue}
                     fullWidth
                     type="search"
                     label="Buscar..."
