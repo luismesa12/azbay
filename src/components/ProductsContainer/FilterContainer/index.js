@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box';
 import { Divider } from "@material-ui/core";
 import Hidden from '@material-ui/core/Hidden';
+import ProductsNotFound from "./ProductsNotFound";
 
 
 const FilterContainer = () => {
@@ -74,7 +75,7 @@ const FilterContainer = () => {
             {view.list && <ItemList productsState={productsFiltered} />}
             {loading ?
                 <Spinner />
-                : !productsFiltered.length && <h1>Aquí Va Componente de Productos No Encontrados</h1>}
+                : !productsFiltered.length && <ProductsNotFound/>}
         </>
     )
 }
