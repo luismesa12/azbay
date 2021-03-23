@@ -20,8 +20,8 @@ const FilterContainer = () => {
     const [filterProducts, setFilterProducts] = useState([]);
     const [view, setView] = useState({ list: false, gallery: true });
     const [loading, setLoading] = useState(true);
-    const [whCategory, setwhCategory] = useState('')
-    const [whRange, setwhRange] = useState('')
+    const [whCategory, setwhCategory] = useState('All')
+    const [whRange, setwhRange] = useState([false, false])
     const [whSort, setWhSort] = useState('')
 
 
@@ -53,34 +53,34 @@ const FilterContainer = () => {
         <>
             <Box pt={3}>
                 <Grid container justify="center">
-                    <Categories {...{ filterProducts, setFilter,setwhCategory }} />
+                    <Categories {...{ filterProducts, setFilter, setwhCategory }} />
                 </Grid>
             </Box>
 
             <Box py={3}>
                 <Grid container spacing={1} justify="space-evenly">
                     <Grid item lg={4} md={4} xs={12}>
-                        <SortPrice {...{ filterProducts, setFilter,setWhSort }} />
-                        <Hidden mdUp> <Box mt={2}><Divider variant="middle" light/></Box> </Hidden>
+                        <SortPrice {...{ filterProducts, setFilter, setWhSort }} />
+                        <Hidden mdUp> <Box mt={2}><Divider variant="middle" light /></Box> </Hidden>
                     </Grid>
                     <Grid item lg={4} md={6} xs={12}>
-                        <PriceRange {...{ filterProducts, setFilter,setwhRange }} />
-                        <Hidden mdUp> <Box mt={2}><Divider variant="middle" light/></Box> </Hidden>
+                        <PriceRange {...{ filterProducts, setFilter, setwhRange }} />
+                        <Hidden mdUp> <Box mt={2}><Divider variant="middle" light /></Box> </Hidden>
                     </Grid>
                     <Grid item lg={4} md={2} xs={12}>
                         <ProductsView {...{ view, setViewState }} />
                     </Grid>
                 </Grid>
             </Box>
-            <Divider variant="middle" light/>
+            <Divider variant="middle" light />
 
-            
-            <FilterIndicator {...{ view,  searchValue, whCategory, whRange,whSort, setSearchValue}}/>
+
+            <FilterIndicator {...{ setWhSort, setwhRange, view, searchValue, whCategory, whRange, whSort, setSearchValue, setView, setwhCategory }} />
             {view.gallery && <ItemGallery productsState={productsFiltered} />}
             {view.list && <ItemList productsState={productsFiltered} />}
             {loading ?
                 <Spinner />
-                : !productsFiltered.length && <ProductsNotFound/>}
+                : !productsFiltered.length && <ProductsNotFound />}
         </>
     )
 }

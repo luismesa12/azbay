@@ -1,19 +1,57 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '@material-ui/core/Button'
+import { Box, Grid, Typography } from '@material-ui/core';
 
-const FilterIndicator = ({ view,  searchValue, whCategory, whRange,whSort, setSearchValue}) => {
+const FilterIndicator = ({ setWhSort, setwhRange, view, searchValue, whCategory, whRange, whSort, setSearchValue, setView, setwhCategory, }) => {
+
+    const clearfilters = () => {
+        (() => setSearchValue(''))();
+        (() => setView({ list: false, gallery: true }))();
+        (() => setwhCategory('All'))();
+        (() => setwhRange([false, false]))();
+        (() => setWhSort(''))();
+    };
+    useEffect(() => {
+        (() => setView({ list: false, gallery: true }))();
+        (() => setwhCategory('All'))();
+        (() => setwhRange([false, false]))();
+        (() => setWhSort(''))();
+    }, [searchValue])
+
     return (
-        <div>
-            {view.list&&'vis ta lista '}
-            {view.gallery&&'galeria vista'}
-            busqueda: {searchValue}
-            {whRange}
-            {whSort}
-            {whCategory}
-            <Button variant="text" size='small' color="secondary" onClick={()=>setSearchValue('')}>
-              X Borrar Filtros
-            </Button>
-        </div>
+        <Box m={2}>
+            <Grid container spacing={1} justify="space-between" alignItems="center" align='center'>
+                {searchValue &&
+                    <Grid item xs={12} lg={2}>
+                        <Typography variant="subtitle2" color="primary">Búsqueda: {searchValue}</Typography>
+                    </Grid>
+                }
+
+                <Grid item xs={12} lg={3}>
+                    {
+                        <Typography variant="subtitle2" color="primary">Categoria: {whCategory}</Typography>
+                    }
+                </Grid>
+
+                {whRange[1] &&
+                    <Grid item xs={12} lg={3}>
+                        <Typography variant="subtitle2" color="primary">Precio min: ${whRange[0]} Precio max: ${whRange[1]}</Typography>
+                    </Grid>
+                }
+
+                {whSort &&
+                    <Grid item xs={12} lg={2}>
+                        <Typography variant="subtitle2" color="primary">Orden: {whSort === 'ascending' && 'Menor Precio'}{whSort === 'descending' && 'Mayor Precio'}</Typography>
+                    </Grid>
+                }
+
+                <Grid item xs={12} lg={2}>
+                    <Button variant="text" size='small' color="secondary" onClick={clearfilters}>
+                        X Borrar Filtros
+                    </Button>
+                </Grid>
+            </Grid>
+        </Box>
     )
 }
 
