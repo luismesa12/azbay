@@ -1,12 +1,23 @@
 // import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { /* CartContext, */ useCartContext } from "../../context/CartContext";
+import { Link as RouterLink } from 'react-router-dom';
+import { useCartContext } from "../../context/CartContext";
 import CartItem from "./CartItem";
-import Button from '@material-ui/core/Button'
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
-import StoreIcon from '@material-ui/icons/Store';
+import { Box, Typography, Button, Grid, } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles({
+    link: {
+        '&:hover': {
+            color: 'white',
+            textDecoration: 'none'
+        },
+    },
+})
 
 const Cart = () => {
+    const classes = useStyles();
     const { cart } = useCartContext();
     const tempCart = [...cart];
     const accum = tempCart.reduce(totalQ, 0)
@@ -16,39 +27,43 @@ const Cart = () => {
     }
     return (
         <>
-            <h1>Soy El Carrito</h1>
+            <Box my={2}>
+                <Typography variant="h2" color="initial" align='center'>Carrito de Compras</Typography>
+            </Box>
             {
                 cart.length ?
                     <>
-                        {cart.map((item) => <span key={item.id}> <CartItem item={item} /> </span>)}
-                        <div className='container'>
-                            <div className='card'>
-                                <div className='card-body'>
-                                    <h3>
-                                        Total a pagar: ${accum}
-                                    </h3>
-                                    <Link to='/orders'>
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            startIcon={<AssignmentTurnedInIcon />}>
-                                            Finalizar Compra
-                                        </Button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                        {cart.map((item) => <Box mb={2} key={item.id}> <CartItem item={item} /> </Box>)}
+                        <Typography gutterBottom variant="h3" color="initial" align='center'>Total a pagar: ${accum}</Typography>
+
+                        <Grid container align='center'>
+                            <Grid item xs >
+                                <Box pb={3}>
+                                    <Button
+                                        className={classes.link}
+                                        component={RouterLink}
+                                        to='/orders'
+                                        size='large'
+                                        variant="contained"
+                                        color="primary"
+                                        startIcon={<AssignmentTurnedInIcon />}>
+                                        Finalizar Compra
+                                    </Button>
+                                </Box>
+                            </Grid>
+                        </Grid>
+
                     </>
-                    : <h1>Carrito Vacio
-                        <Link to='/'>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                startIcon={<StoreIcon/>}>
+                    :
+                    <Grid container spacing={1} align='center'>
+                        <Grid item xs>
+                            <Typography gutterBottom variant='h4' color="initial" align='center'>Entonces, ¿Cuándo Piensas Cambiar Esos Muebles Viejos?</Typography>
+                            <Button className={classes.link} variant="contained" color="primary" size='large' component={RouterLink} to='/'>
                                 Ir A Comprar La Mejor Calidad
-                            </Button>
-                        </Link></h1>
-                }
+                        </Button>
+                        </Grid>
+                    </Grid>
+            }
 
         </>
     )

@@ -32,7 +32,7 @@ const FavoriteList = () => {
                     <Typography gutterBottom variant='h4' color="initial" align='center'>¿Te Gustaría Tener Los Mejores Espacios?</Typography>
                         <Button className={classes.link} variant="contained" color="primary" size='large' component={RouterLink} to='/'>
                             Ir A Antojarme
-                    </Button>
+                        </Button>
                     </Grid>
                 </Grid>
             }
