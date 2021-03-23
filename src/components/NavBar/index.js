@@ -13,9 +13,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { useState } from 'react';
 import WeekendIcon from '@material-ui/icons/Weekend';
 import Box from '@material-ui/core/Box';
-import ViewListIcon from '@material-ui/icons/ViewList';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import Hidden from '@material-ui/core/Hidden';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
@@ -73,7 +74,7 @@ function NavBar() {
                             onClose={handleClose}
                         >
                             <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}><Box px={1}><WeekendIcon /></Box>Kandra</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink} ><Box px={1}><ViewListIcon /></Box>Productos</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/myorders' component={NavLink} ><Box px={1}><AssignmentIndIcon /></Box>Mis Ordenes</MenuItem>
                             <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon /></Box>Contacto</MenuItem>
                         </Menu>
                     </div>
