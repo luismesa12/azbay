@@ -13,7 +13,6 @@ const theme = createMuiTheme({
     overrides:{
       
     },
-    
 });
 
 export default theme;

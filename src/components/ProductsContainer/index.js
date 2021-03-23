@@ -6,7 +6,7 @@ const ProductsContainer = () => {
 
     return (
         <>
-        <img width='100%' src="https://i.imgur.com/0MQCOJz.jpg" />
+        <img width='100%' src="https://i.imgur.com/D46QzgA.jpg" />
         <Container maxWidth="lg">
             <FilterContainer/>
         </Container>
