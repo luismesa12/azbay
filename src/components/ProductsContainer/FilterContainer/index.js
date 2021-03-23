@@ -32,7 +32,6 @@ const FilterContainer = () => {
             setLoading(false)
         };
     }, [productsFound]);
-    console.log(productsFound);
     const setFilter = (value) => {
         setFilterProducts(value)
     };

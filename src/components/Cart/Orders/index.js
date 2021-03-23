@@ -25,7 +25,6 @@ const Orders = () => {
         aux.lastName = values.lastName.trim().length>1?false:'Apellido es requerido'
         aux.number = values.number.length>9?false:'Minimo 10 caracteres requeridos'
         aux.email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/).test(values.email)?false:'Email no valido'
-        console.log(aux);
         setValidated(aux)
         return aux
     };
@@ -61,10 +60,9 @@ const Orders = () => {
         };
         const tempVal = validate(buyer);
         if (tempVal.name||tempVal.lastName ||tempVal.email ||tempVal.number ) {
-            console.log("hay error");
+            console.log("Errores en Formulario");
         }
         else{
-            console.log('no hay erreor');
             const newOrder = {
                 ...buyer,
                 items: cart,
