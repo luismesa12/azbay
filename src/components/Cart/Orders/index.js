@@ -3,9 +3,8 @@ import firebase from 'firebase/app';
 import db from "../../../firebase";
 import { useState } from "react";
 import AlertOrder from "./AlertOrder";
-import Button from '@material-ui/core/Button'
 import SendIcon from '@material-ui/icons/Send';
-
+import { Box, Typography, Button, Grid, Container, Card, CardMedia, TextField, Divider } from '@material-ui/core';
 
 const Orders = () => {
     const { cart, clearCart } = useCartContext();
@@ -55,46 +54,87 @@ const Orders = () => {
 
     return (
         <>
-            <h1>Crear Orden</h1>
-            {
-                <>
+            <Box my={2}>
+                <Typography variant="h2" color="initial" align='center'>Crea Tu Orden</Typography>
+            </Box>
 
-                    <div className='container'>
 
-                        <div className='card'>
-                            <div className='card-body'>
-                                {cart.map((item) => <p key={item.id}>{`*${item.title} Precio: $${item.price} Cantidad: ${item.quantity} Total: $${item.price * item.quantity}`}</p>)}
-                                <h3>
-                                    Total a pagar: ${accum}
-                                </h3>
+
+            <Box mb={5}>
+                <Container maxWidth="md">
+                    <Grid container spacing={1} align='center'>
+                        <Grid item xs>
+                            <Card>
+                                <Box mt={2} mx={5}>
+                                    
+                                    {cart.map((item) => <Typography
+                                        variant="subtitle1"
+                                        color="initial"
+                                        key={item.id}>
+
+                                        {
+                                            `${item.title} | Precio: $
+                                        ${item.price} | Cantidad: 
+                                        ${item.quantity} | Total: 
+                                        $${item.price * item.quantity}
+                                        `}
+                                        <Divider variant='middle' light/>
+                                    </Typography>
+                                    )}
+                                </Box>
+
+                                <Box my={2}>
+                                    <Typography variant="h4" color="initial">Total a pagar: ${accum}</Typography>
+                                </Box>
+
                                 <form onSubmit={createOrder}>
-                                    <h6>Ingrese Sus Datos:</h6>
-                                    <div>
-                                        <input id='fname' placeholder='Nombre'></input>
-                                    </div>
-                                    <div>
-                                        <input id='sname' placeholder='Apellido'></input>
-                                    </div>
-                                    <div>
-                                        <input id='pnumber' placeholder='Celular'></input>
-                                    </div>
-                                    <div>
-                                        <input id='email' placeholder='Email'></input>
-                                    </div>
-                                    <Button type="submit"
-                                        variant="contained"
-                                        color="primary"
-                                        startIcon={<SendIcon />}>
-                                        Finalizar Orden
-                                    </Button>
-                                </form>
-                            </div>
-                        </div>
-                        <AlertOrder currentOrder={currentOrder} orderOk={orderOk} orderError={orderError} />
-                    </div>
+                                    <Typography gutterBottom variant="h6" color="initial">Ingresa Tus Datos</Typography>
+                                    <Grid container spacing={1} align='center'>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                id="fname"
+                                                label="Nombre"
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                id="sname"
+                                                label="Apellido"
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
 
-                </>
-            }
+                                            <TextField
+                                                id="pnumber"
+                                                label="Celular"
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+
+                                            <TextField
+                                                id="email"
+                                                label="Email"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Box my={3}>
+                                        <Button type="submit"
+                                            variant="contained"
+                                            color="primary"
+                                            startIcon={<SendIcon />}>
+                                            Finalizar Orden
+                                            </Button>
+                                    </Box>
+
+                                </form>
+
+                            </Card>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Box>
+
+            <AlertOrder currentOrder={currentOrder} orderOk={orderOk} orderError={orderError} />
 
         </>
     )
