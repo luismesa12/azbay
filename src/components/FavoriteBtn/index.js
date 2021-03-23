@@ -25,7 +25,7 @@ const FavoriteBtn = ({item}) => {
     return (
         <>
             <IconButton aria-label="favorite" onClick={toggleCheckedFav}>
-            {checkedFav?<FavoriteIcon style={{ color: 'red' }}/>:<FavoriteBorderIcon />}
+            {checkedFav?<FavoriteIcon color='secondary'/>:<FavoriteBorderIcon />}
             </IconButton>
         </>
     )

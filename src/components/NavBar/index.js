@@ -33,7 +33,6 @@ const useStyles = makeStyles(theme => ({
         textDecoration: 'none',
         flexGrow: 2,
         '&:hover': {
-            color: 'inherit',
             textDecoration: 'none'
         },
     },
@@ -81,7 +80,7 @@ function NavBar() {
                     </div>
                     <NavLink to='/'><img src='https://i.imgur.com/O7esYuS.jpg' width='40' alt='logo' /></NavLink>
                     <Hidden smDown>
-                        <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='inherit'>
+                        <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='primary'>
                             Muebles Kandra
                         </Typography>
                     </Hidden>
