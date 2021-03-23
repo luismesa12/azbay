@@ -41,11 +41,11 @@ const FavoriteItem = ({ item, removeFromFavorites }) => {
                             added ?
                                 <Link to='/carrito'>
                                     <IconButton aria-label="go to cart">
-                                        <ArrowForwardOutlinedIcon /><ShoppingCartIcon />
+                                        <ArrowForwardOutlinedIcon /><ShoppingCartIcon color='primary'/>
                                     </IconButton>
                                 </Link>
                                 : <IconButton aria-label="" onClick={handleAddtoCart}>
-                                    <AddShoppingCartIcon />
+                                    <AddShoppingCartIcon color='primary'/>
                                 </IconButton>
                         }
                     </Grid>

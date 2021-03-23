@@ -15,7 +15,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <>
             <Counter count={count} max={stock} setCount={setCount}/>
             <IconButton aria-label="addToCart" onClick={handlerOnAdd}>
-              <AddShoppingCartIcon/>
+              <AddShoppingCartIcon color='primary'/>
             </IconButton>
         </>
     )

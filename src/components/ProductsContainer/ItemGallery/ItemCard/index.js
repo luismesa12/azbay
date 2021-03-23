@@ -74,7 +74,7 @@ const ItemCard = ({ product }) => {
                         goToCart ?
                             <Link component={RouterLink} to='/carrito'>
                                 <IconButton aria-label="go to cart">
-                                    <ArrowForwardOutlinedIcon /><ShoppingCartIcon />
+                                    <ArrowForwardOutlinedIcon /><ShoppingCartIcon color='primary'/>
                                 </IconButton>
                             </Link>
                             : <ItemCardAdd onAdd={onAdd} />

@@ -7,7 +7,7 @@ const ItemCardAdd = ({ onAdd }) => {
     return (
         <>
             <IconButton aria-label="" onClick={()=>onAdd(1)}>
-              <AddShoppingCartIcon/>
+              <AddShoppingCartIcon color='primary'/>
             </IconButton>
         </>
     )

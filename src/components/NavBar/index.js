@@ -18,6 +18,7 @@ import Hidden from '@material-ui/core/Hidden';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 
 
+
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
     menuButton: {
@@ -73,9 +74,24 @@ function NavBar() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}><Box px={1}><WeekendIcon /></Box>Kandra</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/myorders' component={NavLink} ><Box px={1}><AssignmentIndIcon /></Box>Mis Ordenes</MenuItem>
-                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon /></Box>Contacto</MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/' component={NavLink}>
+                                <Box px={1} >
+                                    <WeekendIcon color='primary' />
+                                </Box>
+                                <Typography variant="subtitle2" color="primary">Kandra</Typography>
+                            </MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/myorders' component={NavLink} >
+                                <Box px={1}>
+                                    <AssignmentIndIcon color='primary' />
+                                </Box>
+                                <Typography variant="subtitle2" color="primary">Mis Ordenes</Typography>
+                            </MenuItem>
+                            <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} >
+                                <Box px={1}>
+                                    <ContactMailIcon color='primary' />
+                                </Box>
+                                <Typography variant="subtitle2" color="primary">Contacto</Typography>
+                            </MenuItem>
                         </Menu>
                     </div>
                     <NavLink to='/'><img src='https://i.imgur.com/O7esYuS.jpg' width='40' alt='logo' /></NavLink>

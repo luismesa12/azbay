@@ -35,7 +35,7 @@ const DetailCard = ({ product }) => {
                                 goToCart ?
                                     <Link to='/carrito'>
                                         <IconButton aria-label="go to cart">
-                                            <ArrowForwardOutlinedIcon /><ShoppingCartIcon />
+                                            <ArrowForwardOutlinedIcon /><ShoppingCartIcon color='primary'/>
                                         </IconButton>
                                     </Link>
                                     : <ItemCount stock={12} initial={1} onAdd={onAdd}></ItemCount>

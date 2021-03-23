@@ -41,6 +41,7 @@ const MyOrders = () => {
                 <Grid container spacing={1} align='center'>
                     <Grid item xs={12}>
                         <TextField
+                            required
                             id="myorder"
                             label="Ingresa Id de Tu Orden"
                             onChange={(e) => setInputId(e.target.value.trim())}
