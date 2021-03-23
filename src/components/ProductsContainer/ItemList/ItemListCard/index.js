@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
     price: {
     },
     typoLink: {
+        textDecoration: 'none',
         '&:hover': {
             color: 'inherit',
             textDecoration: 'none'

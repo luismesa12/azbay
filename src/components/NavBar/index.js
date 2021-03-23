@@ -30,6 +30,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     title: {
+        textDecoration: 'none',
         flexGrow: 2,
         '&:hover': {
             color: 'inherit',
@@ -78,7 +79,7 @@ function NavBar() {
                             <MenuItem className={classes.menuItem} onClick={handleClose} to='/contact' component={NavLink} ><Box px={1}><ContactMailIcon /></Box>Contacto</MenuItem>
                         </Menu>
                     </div>
-                    <img src='https://i.imgur.com/DIirfFw.png' width='40' alt='logo' />
+                    <NavLink to='/'><img src='https://i.imgur.com/DIirfFw.png' width='40' alt='logo' /></NavLink>
                     <Hidden smDown>
                         <Typography variant="h6" className={classes.title} to='/' component={NavLink} color='inherit'>
                             Muebles Kandra

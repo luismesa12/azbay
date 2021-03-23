@@ -30,6 +30,7 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
     },
     typoLink:{
+        textDecoration: 'none',
         '&:hover': {
             color: 'inherit',
             textDecoration: 'none'
