@@ -6,7 +6,7 @@ import ItemCount from "../../ItemCount"
 import IconButton from '@material-ui/core/IconButton'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
-import { Box, Typography, Grid, Container, Card,  } from '@material-ui/core';
+import { Box, Typography, Grid, Container, Card, CardMedia,  } from '@material-ui/core';
 
 
 const DetailCard = ({ product }) => {
@@ -23,8 +23,12 @@ const DetailCard = ({ product }) => {
             <Container maxWidth="md">
                 <Card className="card">
                     <Grid container spacing={1} justify="space-between" alignItems="center" align='center'>
-                        <Grid item>
-                            <img src={product.pictureUrl} />
+                        <Grid item xs={12} md={6} lg={5}>
+                            <CardMedia
+                            component="img"
+                              title='product'
+                              image={product.pictureUrl}
+                            />
                         </Grid>
                         <Grid item xs>
                             <h4 className="card-title">{product.title}</h4>

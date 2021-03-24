@@ -29,7 +29,12 @@ const FilterIndicator = ({ setWhSort, setwhRange, view, searchValue, whCategory,
 
                 <Grid item xs={12} lg={3}>
                     {
-                        <Typography variant="subtitle2" color="primary">Categoria: {whCategory}</Typography>
+                        <Typography variant="subtitle2" color="primary">Categoria: 
+                        {whCategory=='All'&&' Todos'}
+                        {whCategory=='AAA'&&' Sillas'}
+                        {whCategory=='BBB'&&' Sofás'}
+                        {whCategory=='CCC'&&' Camas'}
+                        </Typography>
                     }
                 </Grid>
 

@@ -5,9 +5,9 @@ const BtnCategories = ({ cAll, cAAA, cBBB, cCCC }) => {
         <div>
             <ButtonGroup size="large" variant="text" color="primary" aria-label="categories">
                 <Button onClick={cAll}>Todos</Button>
-                <Button onClick={cAAA}>AAA</Button>
-                <Button onClick={cBBB}>BBB</Button>
-                <Button onClick={cCCC}>CCC</Button>
+                <Button onClick={cAAA}>Sillas</Button>
+                <Button onClick={cBBB}>Sofás</Button>
+                <Button onClick={cCCC}>Camas</Button>
             </ButtonGroup>
         </div>
     )

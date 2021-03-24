@@ -23,7 +23,7 @@ const FavoriteItem = ({ item, removeFromFavorites }) => {
         <Container maxWidth='lg'>
             <Card >
                 <Grid container spacing={2} justify="center" alignItems="center">
-                    <Grid item lg={1}>
+                    <Grid item xs={12} sm={4} md={2} lg={1}>
                         <CardMedia
                             component="img"
                             title="product"
