@@ -1,3 +1,30 @@
+# App React.Js MueblesKandra
+
+![](https://i.imgur.com/M3VRtdl.png)![](https://i.imgur.com/GSHhFVB.png)![](https://i.imgur.com/LmtwGbw.png)
+
+---
+
+🔥 Productos se leen desde Firestore<br/>
+🔥 Ordenes se escriben y se leen en Firestore<br/>
+🔥 Mensajes de Contacto se escriben en Firestore
+---
+👌 Estilos con Material-UI 
+---
+
+❤ Lista de Favoritos se guarda en localStorage<br/>
+🛒 Lista de Carrito se guarda en localStorage
+---
+
+🔍 Búsqueda  empuja a la pagina principal con withRouter
+---
+
+📍 Los productos se pueden filtrar por categorías, rango de precio, ordenar por mayor o menor precio y ver en formato lista o galería.
+---
+
+🌠Se cargan pocos productos en la primera vista, al final de la lista se encuentra un botón para mostrar más productos.
+---
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
